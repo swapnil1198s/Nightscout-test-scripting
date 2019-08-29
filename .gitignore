@@ -112,3 +112,4 @@ venv.bak/
 # mypy
 .mypy_cache/
 PCARD19PY/icons & misc files/Thumbs.db
+myListFile.html
