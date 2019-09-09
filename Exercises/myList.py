@@ -19,8 +19,8 @@ htmlfile.write('''<!DOCTYPE html>\n
 <title>HTML Text Formatting</title>\n''')
 for file in os.listdir("."):
     print(file)
-    htmlfile.write(file+'\n')
+    htmlfile.write(file+'<br>')
 htmlfile.write('''</head>''')
 htmlfile.close()
 
-subprocess.call(['open', filename])
+subprocess.call(['xdg-open', filename])
