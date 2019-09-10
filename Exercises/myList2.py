@@ -14,10 +14,10 @@ def getDir(dir,depth,html):
          #print(os.listdir(dir+"/"+item))
          html.write('<p style="margin-left: '+str(depth)+'px">&#x1F4C1 '+item+'</p>\n')
          getDir((dir+"/"+item),depth+40,html)
-   
-      
-#   for root in os.walk(dir, topdown=True):   
-      
+
+
+#   for root in os.walk(dir, topdown=True):
+
 
 htmlfile = open(filename, "w+")
 htmlfile.write('''<!DOCTYPE html>\n
@@ -26,7 +26,7 @@ htmlfile.write('''<!DOCTYPE html>\n
 <title>My List HTML Output</title>\n''')
 
 getDir(".",40,htmlfile)
-	
+
 print("done")
 htmlfile.write('''</head>''')
 htmlfile.close()
@@ -47,4 +47,5 @@ htmlfile.close()
 #htmlfile.write('''</head>''')
 #htmlfile.close()
 
-subprocess.call(['xdg-open', filename])
+try: subprocess.call(['xdg-open', filename])
+except: os.startfile(filename)
