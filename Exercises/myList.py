@@ -18,6 +18,8 @@ htmlfile.write('''<!DOCTYPE html>\n
 <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>HTML Text Formatting</title>\n''')
 for file in os.listdir("."):
+    if os.path.isdir("./"+file):
+        htmlfile.write('&#x1F4C1 ')
     print(file)
     htmlfile.write(file+'<br>')
 htmlfile.write('''</head>''')
