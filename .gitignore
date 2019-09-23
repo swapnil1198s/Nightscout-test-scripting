@@ -1,6 +1,9 @@
 # vscode
 .vscode/
 
+# node_modules
+node_modules/
+
 # MS office temp files
 ~$*
 
@@ -112,4 +115,3 @@ venv.bak/
 # mypy
 .mypy_cache/
 PCARD19PY/icons & misc files/Thumbs.db
-myListFile.html

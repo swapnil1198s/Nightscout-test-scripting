@@ -1,0 +1,6 @@
+{
+  "scripts": {
+    "test": "mocha",
+    "test:browser": "live-server --port=9000 --mount=/:test"
+  }
+}
