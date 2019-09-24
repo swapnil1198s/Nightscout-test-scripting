@@ -1,6 +1,5 @@
 parent_path=$( cd "$(dirname "${BASH_SOURCE[0]}")" ; pwd -P )
 
-# cd "$parent_path"
-# cd TestAutomation
+# cd "$parent_path"\TestAutomation\
 
 npm test

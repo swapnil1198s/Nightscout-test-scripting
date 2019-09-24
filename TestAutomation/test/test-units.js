@@ -8,16 +8,16 @@ var expect = require('chai').expect;
 
 describe('mmolToMgdl(); return int', function() {
     context('with invalid argument type', function(){
-        it('should return TypeError', function(){
+        it('should throw error', function(){
             expect(function() {
                 unit.mmolToMgdl('3')
-              }).to.throw(new TypeError('expects only numbers.'))
+              }).to.throw(new TypeError())
         })
     })
 
     context('with integer argument', function(){
         it('should conver 1 to 18', function(){
-            expect(unit.mmolToMgdl(1)).to.equal(1)
+            expect(unit.mmolToMgdl(1)).to.equal(18)
         })
         it('should convert 2 to 36', function(){
             expect(unit.mmolToMgdl(2)).to.equal(36)
@@ -40,10 +40,10 @@ describe('mmolToMgdl(); return int', function() {
 
 describe('mgdlToMMOL(); return .1 decimal', function() {
     context('with invalid argument type', function(){
-        it('should return TypeError', function(){
+        it('should throw TypeError', function(){
             expect(function() {
                 unit.mgdlToMMOL('3')
-              }).to.throw(TypeError, 'expects only numbers.')
+              }).to.throw(new TypeError())
         })
     })
 
