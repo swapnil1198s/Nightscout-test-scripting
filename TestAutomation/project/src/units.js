@@ -23,7 +23,13 @@ function configure() {
 // module.exports = configure;
 
 // modified export
+// module.exports = function (tomdgval, tommolval) {
+//   function mmolToMgdl(){tomdgval}
+//   function mgdlToMMOL(){tommolval}
+
+//   return {mmolToMgdl: mmolToMgdl, mgdlToMMOL: mgdlToMMOL};
+// }
 module.exports = {
-  ToMMOL: function mgdlToMMOL() {},
-  ToMgdl: function mmolToMgdl() {}
+  mmolToMgdl,
+  mgdlToMMOL
 }
