@@ -15,20 +15,10 @@ function configure() {
   };
 }
 
-// modified to export functions
-// module.exports = configure;
-// https://stackoverflow.com/questions/16631064/declare-multiple-module-exports-in-node-js/16631079
-
 // original export
 // module.exports = configure;
 
 // modified export
-// module.exports = function (tomdgval, tommolval) {
-//   function mmolToMgdl(){tomdgval}
-//   function mgdlToMMOL(){tommolval}
-
-//   return {mmolToMgdl: mmolToMgdl, mgdlToMMOL: mgdlToMMOL};
-// }
 module.exports = {
   mmolToMgdl,
   mgdlToMMOL
