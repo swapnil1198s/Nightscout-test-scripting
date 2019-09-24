@@ -17,4 +17,13 @@ function configure() {
 
 // modified to export functions
 // module.exports = configure;
-module.exports = configure, mmolToMgdl, mgdlToMMOL;
+// https://stackoverflow.com/questions/16631064/declare-multiple-module-exports-in-node-js/16631079
+
+// original export
+// module.exports = configure;
+
+// modified export
+module.exports = {
+  ToMMOL: function mgdlToMMOL() {},
+  ToMgdl: function mmolToMgdl() {}
+}
