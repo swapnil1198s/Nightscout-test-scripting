@@ -15,4 +15,6 @@ function configure() {
   };
 }
 
-module.exports = configure;
+// modified to export functions
+// module.exports = configure;
+module.exports = configure, mmolToMgdl, mgdlToMMOL;
