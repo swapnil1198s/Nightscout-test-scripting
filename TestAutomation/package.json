@@ -1,6 +1,10 @@
 {
   "scripts": {
-    "test": "mocha",
-    "test:browser": "live-server --port=9000 --mount=/:test"
+    "test": "mocha testCasesExecutables/* --reporter mochawesome --reporter-options reportDir=reports,reportFilename=testReport"
+  },
+  "dependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.2.1",
+    "mochawesome": "^4.1.0"
   }
 }

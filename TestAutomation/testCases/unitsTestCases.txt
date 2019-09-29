@@ -1,0 +1,37 @@
+please see the files within testCases Executables:
+
+tests for the function mmolToMgdl
+    test group 1 is invalid inputs. 
+    Since the function has poor error handling, and fails on the first and most basic of such tests,
+    there is only one test case.
+
+        test case 1 is located within the test-units.js file under the first 'context'
+        it tests the function mmolToMgdl when given an invalid input
+
+    test group 2 is valid integer inputs.
+
+        test case 2 is located within the same file under the second 'context'
+        it tests the function mmolToMgdl when given a valid input of 1
+
+        test case 3 is located within the same file under the second 'context'
+        it tests the function mmolToMgdl when given a valid input of 2
+
+    test group 3 is valid non-integer inputs.
+    these tests are to ensure that floats are accepted correctly, and that rounding is done predictably.
+
+        test case 4 is located within the same file under the second 'context'
+        it tests the function mmolToMgdl when given a valid input of 2.5
+
+        test case 5 is located within the same file under the second 'context'
+        it tests the function mmolToMgdl when given a valid input of 1.145
+
+        test case 6 is located within the same file under the second 'context'
+        it tests the function mmolToMgdl when given a valid input of 1.06
+
+tests for the function mgdlToMMOL
+    tests are extremely similar
+
+possible future tests:
+    tests for invalid inputs after improving the error handling of the function
+    tests for further valid input ranges (int max, float max, negatives)
+    tests comparing the results between the two functions (does converting the result return the original value?)

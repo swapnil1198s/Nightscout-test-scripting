@@ -15,4 +15,11 @@ function configure() {
   };
 }
 
-module.exports = configure;
+// original export
+// module.exports = configure;
+
+// modified export
+module.exports = {
+  mmolToMgdl,
+  mgdlToMMOL
+}
