@@ -1,2 +1,2 @@
 npm test
-python3 scripts/pythonOpenReport.py
+python -m webbrowser -t "../reports/testReport.html"

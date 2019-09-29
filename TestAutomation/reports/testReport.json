@@ -5,9 +5,9 @@
     "passes": 14,
     "pending": 0,
     "failures": 2,
-    "start": "2019-09-29T19:18:19.152Z",
-    "end": "2019-09-29T19:18:19.231Z",
-    "duration": 79,
+    "start": "2019-09-29T19:20:48.799Z",
+    "end": "2019-09-29T19:20:48.861Z",
+    "duration": 62,
     "testsRegistered": 16,
     "passPercent": 87.5,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "07946b42-f3d1-4d70-8541-1fd4bd118c82",
+      "uuid": "3d35e361-13bc-4007-90c5-4ad733efefdf",
       "title": "",
       "fullFile": "",
       "file": "",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "a3e9b808-e7fa-4107-afce-03e949f96c4e",
+          "uuid": "1d43dcb3-4343-49ab-b441-42305646e098",
           "title": "#sum()",
           "fullFile": "/mnt/c/project/2-2/TestAutomation/testCasesExecutables/test-sum.js",
           "file": "/testCasesExecutables/test-sum.js",
@@ -36,7 +36,7 @@
           "tests": [],
           "suites": [
             {
-              "uuid": "0dc43581-8546-4d3b-b48a-4dc619e2925b",
+              "uuid": "2fda110e-910d-4db3-9732-467ec32f0cce",
               "title": "without arguments",
               "fullFile": "/mnt/c/project/2-2/TestAutomation/testCasesExecutables/test-sum.js",
               "file": "/testCasesExecutables/test-sum.js",
@@ -47,7 +47,7 @@
                   "title": "should return 0",
                   "fullTitle": "#sum() without arguments should return 0",
                   "timedOut": false,
-                  "duration": 3,
+                  "duration": 1,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -56,26 +56,26 @@
                   "context": null,
                   "code": "expect(sum()).to.equal(0)",
                   "err": {},
-                  "uuid": "4cfa44ca-4a39-4dc9-8fbd-14494ae94e0d",
-                  "parentUUID": "0dc43581-8546-4d3b-b48a-4dc619e2925b",
+                  "uuid": "35a03551-bd76-4769-8563-5f4003ca9959",
+                  "parentUUID": "2fda110e-910d-4db3-9732-467ec32f0cce",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "4cfa44ca-4a39-4dc9-8fbd-14494ae94e0d"
+                "35a03551-bd76-4769-8563-5f4003ca9959"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 3,
+              "duration": 1,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
             },
             {
-              "uuid": "307dbfb5-9177-47b6-b39c-d8d8520b7711",
+              "uuid": "43594cdc-7d5c-4022-bd02-e424da97044f",
               "title": "with number arguments",
               "fullFile": "/mnt/c/project/2-2/TestAutomation/testCasesExecutables/test-sum.js",
               "file": "/testCasesExecutables/test-sum.js",
@@ -95,8 +95,8 @@
                   "context": null,
                   "code": "expect(sum(1, 2, 3, 4, 5)).to.equal(15)",
                   "err": {},
-                  "uuid": "982457e4-d052-4aff-b824-fa90664ece5c",
-                  "parentUUID": "307dbfb5-9177-47b6-b39c-d8d8520b7711",
+                  "uuid": "32eeb422-c8e0-4a94-ad21-6faddd584781",
+                  "parentUUID": "43594cdc-7d5c-4022-bd02-e424da97044f",
                   "isHook": false,
                   "skipped": false
                 },
@@ -113,16 +113,16 @@
                   "context": null,
                   "code": "expect(sum(5)).to.equal(5)",
                   "err": {},
-                  "uuid": "0e4f4e57-4aa4-4375-a13c-c396af10ded4",
-                  "parentUUID": "307dbfb5-9177-47b6-b39c-d8d8520b7711",
+                  "uuid": "661ca5ca-10d2-40a0-bf71-00207b1891b2",
+                  "parentUUID": "43594cdc-7d5c-4022-bd02-e424da97044f",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "982457e4-d052-4aff-b824-fa90664ece5c",
-                "0e4f4e57-4aa4-4375-a13c-c396af10ded4"
+                "32eeb422-c8e0-4a94-ad21-6faddd584781",
+                "661ca5ca-10d2-40a0-bf71-00207b1891b2"
               ],
               "failures": [],
               "pending": [],
@@ -133,7 +133,7 @@
               "_timeout": 2000
             },
             {
-              "uuid": "08e62b88-054b-4c0e-afe6-8210ff5681d6",
+              "uuid": "23d40b70-250a-49eb-bedf-672cceced69b",
               "title": "with non-number arguments",
               "fullFile": "/mnt/c/project/2-2/TestAutomation/testCasesExecutables/test-sum.js",
               "file": "/testCasesExecutables/test-sum.js",
@@ -144,7 +144,7 @@
                   "title": "should throw error",
                   "fullTitle": "#sum() with non-number arguments should throw error",
                   "timedOut": false,
-                  "duration": 1,
+                  "duration": 0,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -153,20 +153,20 @@
                   "context": null,
                   "code": "expect(function() {\n  sum(1, 2, '3', [4], 5)\n}).to.throw(TypeError, 'sum() expects only numbers.')",
                   "err": {},
-                  "uuid": "17470b46-9526-4d7e-9838-2922f7e5973d",
-                  "parentUUID": "08e62b88-054b-4c0e-afe6-8210ff5681d6",
+                  "uuid": "f2c590bb-d299-47dc-a877-ce7c2296a2d1",
+                  "parentUUID": "23d40b70-250a-49eb-bedf-672cceced69b",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "17470b46-9526-4d7e-9838-2922f7e5973d"
+                "f2c590bb-d299-47dc-a877-ce7c2296a2d1"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 1,
+              "duration": 0,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
@@ -182,7 +182,7 @@
           "_timeout": 2000
         },
         {
-          "uuid": "dc2b82d3-955f-4321-afab-9d2f8e577b26",
+          "uuid": "0ff32ebf-3634-4b99-a50b-969268e1e582",
           "title": "mmolToMgdl(); return int",
           "fullFile": "/mnt/c/project/2-2/TestAutomation/testCasesExecutables/test-units.js",
           "file": "/testCasesExecutables/test-units.js",
@@ -191,7 +191,7 @@
           "tests": [],
           "suites": [
             {
-              "uuid": "e068340d-d0d5-4e92-b731-2790212e6a83",
+              "uuid": "8ec2875a-6cbe-4c39-9d85-a8d6d99a7ca8",
               "title": "with invalid argument type",
               "fullFile": "/mnt/c/project/2-2/TestAutomation/testCasesExecutables/test-units.js",
               "file": "/testCasesExecutables/test-units.js",
@@ -215,8 +215,8 @@
                     "estack": "AssertionError: expected [Function] to throw 'TypeError'\n    at Context.<anonymous> (testCasesExecutables/test-units.js:14:26)",
                     "diff": null
                   },
-                  "uuid": "4ca853a4-cde5-4690-af3b-bafd7714e973",
-                  "parentUUID": "e068340d-d0d5-4e92-b731-2790212e6a83",
+                  "uuid": "1b63d87f-6cc5-4a88-840f-98a7777fd998",
+                  "parentUUID": "8ec2875a-6cbe-4c39-9d85-a8d6d99a7ca8",
                   "isHook": false,
                   "skipped": false
                 }
@@ -224,7 +224,7 @@
               "suites": [],
               "passes": [],
               "failures": [
-                "4ca853a4-cde5-4690-af3b-bafd7714e973"
+                "1b63d87f-6cc5-4a88-840f-98a7777fd998"
               ],
               "pending": [],
               "skipped": [],
@@ -234,7 +234,7 @@
               "_timeout": 2000
             },
             {
-              "uuid": "793169c0-4248-4477-a330-e8528fd1c364",
+              "uuid": "c2140e17-7a42-4620-9dac-e2b66df1c013",
               "title": "with integer argument",
               "fullFile": "/mnt/c/project/2-2/TestAutomation/testCasesExecutables/test-units.js",
               "file": "/testCasesExecutables/test-units.js",
@@ -254,8 +254,8 @@
                   "context": null,
                   "code": "expect(unit.mmolToMgdl(1)).to.equal(18)",
                   "err": {},
-                  "uuid": "0a20a82d-9f12-46fe-9843-460e1d10a8c0",
-                  "parentUUID": "793169c0-4248-4477-a330-e8528fd1c364",
+                  "uuid": "823ae2de-a43f-40eb-ad6a-b47badee965e",
+                  "parentUUID": "c2140e17-7a42-4620-9dac-e2b66df1c013",
                   "isHook": false,
                   "skipped": false
                 },
@@ -272,16 +272,16 @@
                   "context": null,
                   "code": "expect(unit.mmolToMgdl(2)).to.equal(36)",
                   "err": {},
-                  "uuid": "184f4859-d500-40f4-9b8b-8d87919cb0c7",
-                  "parentUUID": "793169c0-4248-4477-a330-e8528fd1c364",
+                  "uuid": "7b3ec181-03d7-4121-bcc9-e37d2e104572",
+                  "parentUUID": "c2140e17-7a42-4620-9dac-e2b66df1c013",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "0a20a82d-9f12-46fe-9843-460e1d10a8c0",
-                "184f4859-d500-40f4-9b8b-8d87919cb0c7"
+                "823ae2de-a43f-40eb-ad6a-b47badee965e",
+                "7b3ec181-03d7-4121-bcc9-e37d2e104572"
               ],
               "failures": [],
               "pending": [],
@@ -292,7 +292,7 @@
               "_timeout": 2000
             },
             {
-              "uuid": "66110a3f-2ce7-4fba-8e91-a16e7531ed7b",
+              "uuid": "a570c6fb-e978-4a75-8351-16fd17c635a6",
               "title": "with float argument",
               "fullFile": "/mnt/c/project/2-2/TestAutomation/testCasesExecutables/test-units.js",
               "file": "/testCasesExecutables/test-units.js",
@@ -312,8 +312,8 @@
                   "context": null,
                   "code": "expect(unit.mmolToMgdl(2.5)).to.equal(45)",
                   "err": {},
-                  "uuid": "0c62db4c-be55-4303-a2e2-079a10530754",
-                  "parentUUID": "66110a3f-2ce7-4fba-8e91-a16e7531ed7b",
+                  "uuid": "7ab7446b-b673-4440-ab38-297d5d546e76",
+                  "parentUUID": "a570c6fb-e978-4a75-8351-16fd17c635a6",
                   "isHook": false,
                   "skipped": false
                 },
@@ -330,8 +330,8 @@
                   "context": null,
                   "code": "expect(unit.mmolToMgdl(1.145)).to.equal(21)",
                   "err": {},
-                  "uuid": "b5603354-3929-474e-9aaf-b3e6a07bc087",
-                  "parentUUID": "66110a3f-2ce7-4fba-8e91-a16e7531ed7b",
+                  "uuid": "6b8b14eb-1902-4898-a2a9-f9da65f7199e",
+                  "parentUUID": "a570c6fb-e978-4a75-8351-16fd17c635a6",
                   "isHook": false,
                   "skipped": false
                 },
@@ -348,17 +348,17 @@
                   "context": null,
                   "code": "expect(unit.mmolToMgdl(1.06)).to.equal(19)",
                   "err": {},
-                  "uuid": "335bd340-3493-4f3b-a791-f8525f2b89f8",
-                  "parentUUID": "66110a3f-2ce7-4fba-8e91-a16e7531ed7b",
+                  "uuid": "8c09c736-5446-482f-bce3-d9af115fd804",
+                  "parentUUID": "a570c6fb-e978-4a75-8351-16fd17c635a6",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "0c62db4c-be55-4303-a2e2-079a10530754",
-                "b5603354-3929-474e-9aaf-b3e6a07bc087",
-                "335bd340-3493-4f3b-a791-f8525f2b89f8"
+                "7ab7446b-b673-4440-ab38-297d5d546e76",
+                "6b8b14eb-1902-4898-a2a9-f9da65f7199e",
+                "8c09c736-5446-482f-bce3-d9af115fd804"
               ],
               "failures": [],
               "pending": [],
@@ -379,7 +379,7 @@
           "_timeout": 2000
         },
         {
-          "uuid": "beee8937-b82a-4001-824b-3d2263048d3b",
+          "uuid": "ce3c3697-fa94-41e2-840f-9c3b524971ea",
           "title": "mgdlToMMOL(); return .1 decimal",
           "fullFile": "/mnt/c/project/2-2/TestAutomation/testCasesExecutables/test-units.js",
           "file": "/testCasesExecutables/test-units.js",
@@ -388,7 +388,7 @@
           "tests": [],
           "suites": [
             {
-              "uuid": "600b804b-d0fe-49e4-a045-a8e53e92a366",
+              "uuid": "8c7ec1c2-4271-4d79-a989-edfe88ab4741",
               "title": "with invalid argument type",
               "fullFile": "/mnt/c/project/2-2/TestAutomation/testCasesExecutables/test-units.js",
               "file": "/testCasesExecutables/test-units.js",
@@ -412,8 +412,8 @@
                     "estack": "AssertionError: expected [Function] to throw 'TypeError'\n    at Context.<anonymous> (testCasesExecutables/test-units.js:46:26)",
                     "diff": null
                   },
-                  "uuid": "7b431ef7-f4e6-43b7-8c86-85ea1f117aba",
-                  "parentUUID": "600b804b-d0fe-49e4-a045-a8e53e92a366",
+                  "uuid": "67699385-3fee-4a3b-927b-3f89e13c95d1",
+                  "parentUUID": "8c7ec1c2-4271-4d79-a989-edfe88ab4741",
                   "isHook": false,
                   "skipped": false
                 }
@@ -421,7 +421,7 @@
               "suites": [],
               "passes": [],
               "failures": [
-                "7b431ef7-f4e6-43b7-8c86-85ea1f117aba"
+                "67699385-3fee-4a3b-927b-3f89e13c95d1"
               ],
               "pending": [],
               "skipped": [],
@@ -431,7 +431,7 @@
               "_timeout": 2000
             },
             {
-              "uuid": "ae5f2831-2ac5-4c03-bf1d-407b879cd63e",
+              "uuid": "a9c965f8-b59d-4e73-9ca0-f52aabd5b502",
               "title": "with integer argument",
               "fullFile": "/mnt/c/project/2-2/TestAutomation/testCasesExecutables/test-units.js",
               "file": "/testCasesExecutables/test-units.js",
@@ -451,8 +451,8 @@
                   "context": null,
                   "code": "expect(unit.mgdlToMMOL(18)).to.equal('1.0')",
                   "err": {},
-                  "uuid": "33e4a81c-e349-4827-90b0-0d2dad25d789",
-                  "parentUUID": "ae5f2831-2ac5-4c03-bf1d-407b879cd63e",
+                  "uuid": "516826e4-9e6a-4c8e-974a-eb4bad222a06",
+                  "parentUUID": "a9c965f8-b59d-4e73-9ca0-f52aabd5b502",
                   "isHook": false,
                   "skipped": false
                 },
@@ -469,16 +469,16 @@
                   "context": null,
                   "code": "expect(unit.mgdlToMMOL(135)).to.equal('7.5')",
                   "err": {},
-                  "uuid": "a8a38656-f62e-4e1a-b6c0-30d503280bdb",
-                  "parentUUID": "ae5f2831-2ac5-4c03-bf1d-407b879cd63e",
+                  "uuid": "e5545a58-4082-431d-8187-a32477e0379f",
+                  "parentUUID": "a9c965f8-b59d-4e73-9ca0-f52aabd5b502",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "33e4a81c-e349-4827-90b0-0d2dad25d789",
-                "a8a38656-f62e-4e1a-b6c0-30d503280bdb"
+                "516826e4-9e6a-4c8e-974a-eb4bad222a06",
+                "e5545a58-4082-431d-8187-a32477e0379f"
               ],
               "failures": [],
               "pending": [],
@@ -489,7 +489,7 @@
               "_timeout": 2000
             },
             {
-              "uuid": "0c22b4a4-522e-43a9-9db8-eef280525410",
+              "uuid": "ea6e6ed3-340c-43bf-b7d6-98794a2f871d",
               "title": "with float argument",
               "fullFile": "/mnt/c/project/2-2/TestAutomation/testCasesExecutables/test-units.js",
               "file": "/testCasesExecutables/test-units.js",
@@ -509,8 +509,8 @@
                   "context": null,
                   "code": "expect(unit.mgdlToMMOL(21.3)).to.equal('1.2')",
                   "err": {},
-                  "uuid": "133e9b5f-c50b-467c-a2b2-dfdbb3218606",
-                  "parentUUID": "0c22b4a4-522e-43a9-9db8-eef280525410",
+                  "uuid": "ae3c5713-ec77-46b0-85ed-5da4bbab48bb",
+                  "parentUUID": "ea6e6ed3-340c-43bf-b7d6-98794a2f871d",
                   "isHook": false,
                   "skipped": false
                 },
@@ -527,8 +527,8 @@
                   "context": null,
                   "code": "expect(unit.mgdlToMMOL(30.01)).to.equal('1.7')",
                   "err": {},
-                  "uuid": "d31d31b8-4ed8-4dc6-bb58-60e056d50a35",
-                  "parentUUID": "0c22b4a4-522e-43a9-9db8-eef280525410",
+                  "uuid": "528c2f90-24bb-45fa-a474-f0131cb5176c",
+                  "parentUUID": "ea6e6ed3-340c-43bf-b7d6-98794a2f871d",
                   "isHook": false,
                   "skipped": false
                 },
@@ -545,17 +545,17 @@
                   "context": null,
                   "code": "expect(unit.mgdlToMMOL(1.06)).to.equal('0.1')",
                   "err": {},
-                  "uuid": "b97fb168-a46f-4b08-8c4d-7ec6a51fc7ce",
-                  "parentUUID": "0c22b4a4-522e-43a9-9db8-eef280525410",
+                  "uuid": "2ee1f651-49c2-4ff0-a4de-6d71461fe633",
+                  "parentUUID": "ea6e6ed3-340c-43bf-b7d6-98794a2f871d",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "133e9b5f-c50b-467c-a2b2-dfdbb3218606",
-                "d31d31b8-4ed8-4dc6-bb58-60e056d50a35",
-                "b97fb168-a46f-4b08-8c4d-7ec6a51fc7ce"
+                "ae3c5713-ec77-46b0-85ed-5da4bbab48bb",
+                "528c2f90-24bb-45fa-a474-f0131cb5176c",
+                "2ee1f651-49c2-4ff0-a4de-6d71461fe633"
               ],
               "failures": [],
               "pending": [],
