@@ -1,1 +1,12 @@
 # 2-2
+
+1. To run the tests, first install nodejs.
+
+This can be done with by following the instuctions here:
+<https://tecadmin.net/install-latest-nodejs-npm-on-ubuntu/>
+
+2. cd into the TestAutomation subdirectory. The locations where you run the scripts from is important, and the assignment document states that they will be run from TestAutomation
+
+3. execute the command ``./scripts/setup.sh``. This will install the node-dependencies. If they fail, ensure that nodejs is installed correctly; your computer may need to restart, ``sudo apt update`` or ``sudo apt upgrade -y``
+
+4. execute the command ``./scripts/runAllTests.sh``. This should run the tests, generate the report, and open it in your web browser. If it does not do so, please check for the html file in the reports subdirectory.
