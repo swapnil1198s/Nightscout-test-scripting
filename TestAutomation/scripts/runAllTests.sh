@@ -1,2 +1,2 @@
 npm test
-open ./reports/testReport.html
+python3 scripts/pythonOpenReport.py
