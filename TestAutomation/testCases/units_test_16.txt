@@ -1,0 +1,24 @@
+test ID:
+    units_test_16
+
+requirement being tested:
+    reversibility of conversion functions (lack of rounding errors) when given float inputs
+
+component being tested:
+    units.js
+
+method(s) being tested:
+    mmolToMgdl()
+    mgdlToMMOL()
+
+file:
+    units.js
+
+function:
+    round trip conversion of mgdl -> MMOL -> mgdl
+
+input:
+    21.3
+
+expected output:
+    21.3

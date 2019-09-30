@@ -1,15 +1,15 @@
 {
   "stats": {
-    "suites": 12,
+    "suites": 14,
     "tests": 16,
-    "passes": 14,
+    "passes": 13,
     "pending": 0,
-    "failures": 2,
-    "start": "2019-09-29T19:27:46.149Z",
-    "end": "2019-09-29T19:27:46.303Z",
-    "duration": 154,
+    "failures": 3,
+    "start": "2019-09-30T18:17:40.753Z",
+    "end": "2019-09-30T18:17:40.776Z",
+    "duration": 23,
     "testsRegistered": 16,
-    "passPercent": 87.5,
+    "passPercent": 81.25,
     "pendingPercent": 0,
     "other": 0,
     "hasOther": false,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "3fd60f1d-3176-4394-abee-665c317e2ce7",
+      "uuid": "f6328a49-0b34-4345-afd8-efddcc166565",
       "title": "",
       "fullFile": "",
       "file": "",
@@ -27,162 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "36f14350-ec59-497d-9c0c-68c9442e6404",
-          "title": "#sum()",
-          "fullFile": "/mnt/c/project/2-2/TestAutomation/testCasesExecutables/test-sum.js",
-          "file": "/testCasesExecutables/test-sum.js",
-          "beforeHooks": [],
-          "afterHooks": [],
-          "tests": [],
-          "suites": [
-            {
-              "uuid": "5e1a4ac5-ac00-496c-8ab7-7b016b6d22a9",
-              "title": "without arguments",
-              "fullFile": "/mnt/c/project/2-2/TestAutomation/testCasesExecutables/test-sum.js",
-              "file": "/testCasesExecutables/test-sum.js",
-              "beforeHooks": [],
-              "afterHooks": [],
-              "tests": [
-                {
-                  "title": "should return 0",
-                  "fullTitle": "#sum() without arguments should return 0",
-                  "timedOut": false,
-                  "duration": 1,
-                  "state": "passed",
-                  "speed": "fast",
-                  "pass": true,
-                  "fail": false,
-                  "pending": false,
-                  "context": null,
-                  "code": "expect(sum()).to.equal(0)",
-                  "err": {},
-                  "uuid": "31b6e597-4e78-4284-abe9-0d76f0225eac",
-                  "parentUUID": "5e1a4ac5-ac00-496c-8ab7-7b016b6d22a9",
-                  "isHook": false,
-                  "skipped": false
-                }
-              ],
-              "suites": [],
-              "passes": [
-                "31b6e597-4e78-4284-abe9-0d76f0225eac"
-              ],
-              "failures": [],
-              "pending": [],
-              "skipped": [],
-              "duration": 1,
-              "root": false,
-              "rootEmpty": false,
-              "_timeout": 2000
-            },
-            {
-              "uuid": "420e7166-6bf1-453f-bbc3-2f0c46776f97",
-              "title": "with number arguments",
-              "fullFile": "/mnt/c/project/2-2/TestAutomation/testCasesExecutables/test-sum.js",
-              "file": "/testCasesExecutables/test-sum.js",
-              "beforeHooks": [],
-              "afterHooks": [],
-              "tests": [
-                {
-                  "title": "should return sum of arguments",
-                  "fullTitle": "#sum() with number arguments should return sum of arguments",
-                  "timedOut": false,
-                  "duration": 0,
-                  "state": "passed",
-                  "speed": "fast",
-                  "pass": true,
-                  "fail": false,
-                  "pending": false,
-                  "context": null,
-                  "code": "expect(sum(1, 2, 3, 4, 5)).to.equal(15)",
-                  "err": {},
-                  "uuid": "0e8640e3-ab4b-4487-a43f-a5d33842a5c9",
-                  "parentUUID": "420e7166-6bf1-453f-bbc3-2f0c46776f97",
-                  "isHook": false,
-                  "skipped": false
-                },
-                {
-                  "title": "should return argument when only one argument is passed",
-                  "fullTitle": "#sum() with number arguments should return argument when only one argument is passed",
-                  "timedOut": false,
-                  "duration": 0,
-                  "state": "passed",
-                  "speed": "fast",
-                  "pass": true,
-                  "fail": false,
-                  "pending": false,
-                  "context": null,
-                  "code": "expect(sum(5)).to.equal(5)",
-                  "err": {},
-                  "uuid": "477e4f5a-cadc-4aa1-a404-67354238a717",
-                  "parentUUID": "420e7166-6bf1-453f-bbc3-2f0c46776f97",
-                  "isHook": false,
-                  "skipped": false
-                }
-              ],
-              "suites": [],
-              "passes": [
-                "0e8640e3-ab4b-4487-a43f-a5d33842a5c9",
-                "477e4f5a-cadc-4aa1-a404-67354238a717"
-              ],
-              "failures": [],
-              "pending": [],
-              "skipped": [],
-              "duration": 0,
-              "root": false,
-              "rootEmpty": false,
-              "_timeout": 2000
-            },
-            {
-              "uuid": "c550c2cd-7fa1-4af9-b6fb-ddf4b80a763e",
-              "title": "with non-number arguments",
-              "fullFile": "/mnt/c/project/2-2/TestAutomation/testCasesExecutables/test-sum.js",
-              "file": "/testCasesExecutables/test-sum.js",
-              "beforeHooks": [],
-              "afterHooks": [],
-              "tests": [
-                {
-                  "title": "should throw error",
-                  "fullTitle": "#sum() with non-number arguments should throw error",
-                  "timedOut": false,
-                  "duration": 2,
-                  "state": "passed",
-                  "speed": "fast",
-                  "pass": true,
-                  "fail": false,
-                  "pending": false,
-                  "context": null,
-                  "code": "expect(function() {\n  sum(1, 2, '3', [4], 5)\n}).to.throw(TypeError, 'sum() expects only numbers.')",
-                  "err": {},
-                  "uuid": "c24bc185-a2e7-4168-8ffa-b192ca65129a",
-                  "parentUUID": "c550c2cd-7fa1-4af9-b6fb-ddf4b80a763e",
-                  "isHook": false,
-                  "skipped": false
-                }
-              ],
-              "suites": [],
-              "passes": [
-                "c24bc185-a2e7-4168-8ffa-b192ca65129a"
-              ],
-              "failures": [],
-              "pending": [],
-              "skipped": [],
-              "duration": 2,
-              "root": false,
-              "rootEmpty": false,
-              "_timeout": 2000
-            }
-          ],
-          "passes": [],
-          "failures": [],
-          "pending": [],
-          "skipped": [],
-          "duration": 0,
-          "root": false,
-          "rootEmpty": false,
-          "_timeout": 2000
-        },
-        {
-          "uuid": "81aac76d-f65e-4c47-b8c6-85c509cd1262",
+          "uuid": "94981434-07c5-4e56-8c49-dfc43001be20",
           "title": "mmolToMgdl(); return int",
           "fullFile": "/mnt/c/project/2-2/TestAutomation/testCasesExecutables/test-units.js",
           "file": "/testCasesExecutables/test-units.js",
@@ -191,7 +36,7 @@
           "tests": [],
           "suites": [
             {
-              "uuid": "69b3bc42-14d8-4ec4-90fe-1220fd600ac6",
+              "uuid": "f51d21cf-7958-4c55-a75b-f85b745c9d2a",
               "title": "with invalid argument type",
               "fullFile": "/mnt/c/project/2-2/TestAutomation/testCasesExecutables/test-units.js",
               "file": "/testCasesExecutables/test-units.js",
@@ -202,7 +47,7 @@
                   "title": "should throw error",
                   "fullTitle": "mmolToMgdl(); return int with invalid argument type should throw error",
                   "timedOut": false,
-                  "duration": 2,
+                  "duration": 3,
                   "state": "failed",
                   "speed": null,
                   "pass": false,
@@ -215,8 +60,8 @@
                     "estack": "AssertionError: expected [Function] to throw 'TypeError'\n    at Context.<anonymous> (testCasesExecutables/test-units.js:14:26)",
                     "diff": null
                   },
-                  "uuid": "855a84a3-319e-4712-850d-29f4dbc9e72a",
-                  "parentUUID": "69b3bc42-14d8-4ec4-90fe-1220fd600ac6",
+                  "uuid": "fc12b7b0-1f22-430b-98c4-4b2e7df45d00",
+                  "parentUUID": "f51d21cf-7958-4c55-a75b-f85b745c9d2a",
                   "isHook": false,
                   "skipped": false
                 }
@@ -224,17 +69,17 @@
               "suites": [],
               "passes": [],
               "failures": [
-                "855a84a3-319e-4712-850d-29f4dbc9e72a"
+                "fc12b7b0-1f22-430b-98c4-4b2e7df45d00"
               ],
               "pending": [],
               "skipped": [],
-              "duration": 2,
+              "duration": 3,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
             },
             {
-              "uuid": "a94ae508-2fe6-499f-9498-f61f0b638518",
+              "uuid": "c3b280e5-a0e0-4e00-a52d-c0882136a2a5",
               "title": "with integer argument",
               "fullFile": "/mnt/c/project/2-2/TestAutomation/testCasesExecutables/test-units.js",
               "file": "/testCasesExecutables/test-units.js",
@@ -254,8 +99,8 @@
                   "context": null,
                   "code": "expect(unit.mmolToMgdl(1)).to.equal(18)",
                   "err": {},
-                  "uuid": "63684f2c-8282-4e64-9e61-58c8e4814ef2",
-                  "parentUUID": "a94ae508-2fe6-499f-9498-f61f0b638518",
+                  "uuid": "8dad82df-6deb-4f14-8bd3-bc4d14ed0359",
+                  "parentUUID": "c3b280e5-a0e0-4e00-a52d-c0882136a2a5",
                   "isHook": false,
                   "skipped": false
                 },
@@ -263,7 +108,7 @@
                   "title": "should convert 2 to 36",
                   "fullTitle": "mmolToMgdl(); return int with integer argument should convert 2 to 36",
                   "timedOut": false,
-                  "duration": 0,
+                  "duration": 1,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -272,27 +117,27 @@
                   "context": null,
                   "code": "expect(unit.mmolToMgdl(2)).to.equal(36)",
                   "err": {},
-                  "uuid": "12c3e31e-57a5-4b7f-aaef-dd171f79fb15",
-                  "parentUUID": "a94ae508-2fe6-499f-9498-f61f0b638518",
+                  "uuid": "bf042903-9837-4037-baf1-f6ce5a4d886a",
+                  "parentUUID": "c3b280e5-a0e0-4e00-a52d-c0882136a2a5",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "63684f2c-8282-4e64-9e61-58c8e4814ef2",
-                "12c3e31e-57a5-4b7f-aaef-dd171f79fb15"
+                "8dad82df-6deb-4f14-8bd3-bc4d14ed0359",
+                "bf042903-9837-4037-baf1-f6ce5a4d886a"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 0,
+              "duration": 1,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
             },
             {
-              "uuid": "575970d1-5119-4a4d-afd3-b52cb9b14c5b",
+              "uuid": "eaa74ca1-f885-413f-ba79-e91ab34fbe23",
               "title": "with float argument",
               "fullFile": "/mnt/c/project/2-2/TestAutomation/testCasesExecutables/test-units.js",
               "file": "/testCasesExecutables/test-units.js",
@@ -312,8 +157,8 @@
                   "context": null,
                   "code": "expect(unit.mmolToMgdl(2.5)).to.equal(45)",
                   "err": {},
-                  "uuid": "9b7ef213-3881-4c8a-aea6-70f5f9276973",
-                  "parentUUID": "575970d1-5119-4a4d-afd3-b52cb9b14c5b",
+                  "uuid": "c7ce9b95-0869-4a07-9e09-bef248514901",
+                  "parentUUID": "eaa74ca1-f885-413f-ba79-e91ab34fbe23",
                   "isHook": false,
                   "skipped": false
                 },
@@ -330,8 +175,8 @@
                   "context": null,
                   "code": "expect(unit.mmolToMgdl(1.145)).to.equal(21)",
                   "err": {},
-                  "uuid": "71689153-9e9d-4d8a-bf26-6bd10e5214af",
-                  "parentUUID": "575970d1-5119-4a4d-afd3-b52cb9b14c5b",
+                  "uuid": "0604cb04-9a4f-4cfc-9153-22e7453902e1",
+                  "parentUUID": "eaa74ca1-f885-413f-ba79-e91ab34fbe23",
                   "isHook": false,
                   "skipped": false
                 },
@@ -348,17 +193,17 @@
                   "context": null,
                   "code": "expect(unit.mmolToMgdl(1.06)).to.equal(19)",
                   "err": {},
-                  "uuid": "4cb7fe7a-ca7f-4230-a34f-8ae62513c70f",
-                  "parentUUID": "575970d1-5119-4a4d-afd3-b52cb9b14c5b",
+                  "uuid": "e00ea64a-68b9-448f-8fe1-8b824a5a57c6",
+                  "parentUUID": "eaa74ca1-f885-413f-ba79-e91ab34fbe23",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "9b7ef213-3881-4c8a-aea6-70f5f9276973",
-                "71689153-9e9d-4d8a-bf26-6bd10e5214af",
-                "4cb7fe7a-ca7f-4230-a34f-8ae62513c70f"
+                "c7ce9b95-0869-4a07-9e09-bef248514901",
+                "0604cb04-9a4f-4cfc-9153-22e7453902e1",
+                "e00ea64a-68b9-448f-8fe1-8b824a5a57c6"
               ],
               "failures": [],
               "pending": [],
@@ -379,7 +224,7 @@
           "_timeout": 2000
         },
         {
-          "uuid": "96deb164-1072-4edf-9d50-683e4cc12d48",
+          "uuid": "9828a497-faea-461f-9a6e-f4385fc7114d",
           "title": "mgdlToMMOL(); return .1 decimal",
           "fullFile": "/mnt/c/project/2-2/TestAutomation/testCasesExecutables/test-units.js",
           "file": "/testCasesExecutables/test-units.js",
@@ -388,7 +233,7 @@
           "tests": [],
           "suites": [
             {
-              "uuid": "1769efd7-d3da-4e64-8a14-d942c2d9c781",
+              "uuid": "abb41b81-30c3-4b26-a522-d29531252834",
               "title": "with invalid argument type",
               "fullFile": "/mnt/c/project/2-2/TestAutomation/testCasesExecutables/test-units.js",
               "file": "/testCasesExecutables/test-units.js",
@@ -399,7 +244,7 @@
                   "title": "should throw TypeError",
                   "fullTitle": "mgdlToMMOL(); return .1 decimal with invalid argument type should throw TypeError",
                   "timedOut": false,
-                  "duration": 0,
+                  "duration": 1,
                   "state": "failed",
                   "speed": null,
                   "pass": false,
@@ -412,8 +257,8 @@
                     "estack": "AssertionError: expected [Function] to throw 'TypeError'\n    at Context.<anonymous> (testCasesExecutables/test-units.js:46:26)",
                     "diff": null
                   },
-                  "uuid": "7ac0e568-798c-4ecf-b747-10cf08c4558f",
-                  "parentUUID": "1769efd7-d3da-4e64-8a14-d942c2d9c781",
+                  "uuid": "7b4f4094-9472-4f43-9d75-2b822e281177",
+                  "parentUUID": "abb41b81-30c3-4b26-a522-d29531252834",
                   "isHook": false,
                   "skipped": false
                 }
@@ -421,17 +266,17 @@
               "suites": [],
               "passes": [],
               "failures": [
-                "7ac0e568-798c-4ecf-b747-10cf08c4558f"
+                "7b4f4094-9472-4f43-9d75-2b822e281177"
               ],
               "pending": [],
               "skipped": [],
-              "duration": 0,
+              "duration": 1,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
             },
             {
-              "uuid": "e573d5ba-a96b-4b6f-ab3e-14c6dac054a3",
+              "uuid": "ae17a8d4-fb46-43eb-9d9b-eb49d1b29e65",
               "title": "with integer argument",
               "fullFile": "/mnt/c/project/2-2/TestAutomation/testCasesExecutables/test-units.js",
               "file": "/testCasesExecutables/test-units.js",
@@ -439,8 +284,8 @@
               "afterHooks": [],
               "tests": [
                 {
-                  "title": "should conver 18 to '1.0'",
-                  "fullTitle": "mgdlToMMOL(); return .1 decimal with integer argument should conver 18 to '1.0'",
+                  "title": "should convert 18 to '1.0'",
+                  "fullTitle": "mgdlToMMOL(); return .1 decimal with integer argument should convert 18 to '1.0'",
                   "timedOut": false,
                   "duration": 0,
                   "state": "passed",
@@ -451,8 +296,8 @@
                   "context": null,
                   "code": "expect(unit.mgdlToMMOL(18)).to.equal('1.0')",
                   "err": {},
-                  "uuid": "f47e2525-9917-4951-affc-8ba39439d76e",
-                  "parentUUID": "e573d5ba-a96b-4b6f-ab3e-14c6dac054a3",
+                  "uuid": "61622cf0-2d37-479b-a9c8-3c93fb9f51b2",
+                  "parentUUID": "ae17a8d4-fb46-43eb-9d9b-eb49d1b29e65",
                   "isHook": false,
                   "skipped": false
                 },
@@ -469,16 +314,16 @@
                   "context": null,
                   "code": "expect(unit.mgdlToMMOL(135)).to.equal('7.5')",
                   "err": {},
-                  "uuid": "68d3e8bb-8ff2-4584-8a74-5489dea862dc",
-                  "parentUUID": "e573d5ba-a96b-4b6f-ab3e-14c6dac054a3",
+                  "uuid": "e83eef44-24e8-40d2-9327-50b0dfd4ffca",
+                  "parentUUID": "ae17a8d4-fb46-43eb-9d9b-eb49d1b29e65",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "f47e2525-9917-4951-affc-8ba39439d76e",
-                "68d3e8bb-8ff2-4584-8a74-5489dea862dc"
+                "61622cf0-2d37-479b-a9c8-3c93fb9f51b2",
+                "e83eef44-24e8-40d2-9327-50b0dfd4ffca"
               ],
               "failures": [],
               "pending": [],
@@ -489,7 +334,7 @@
               "_timeout": 2000
             },
             {
-              "uuid": "2aba0bed-53c4-4243-a6cc-d52c4993ae05",
+              "uuid": "1aae3097-4858-45ce-b7e7-dda5f8814c48",
               "title": "with float argument",
               "fullFile": "/mnt/c/project/2-2/TestAutomation/testCasesExecutables/test-units.js",
               "file": "/testCasesExecutables/test-units.js",
@@ -509,8 +354,8 @@
                   "context": null,
                   "code": "expect(unit.mgdlToMMOL(21.3)).to.equal('1.2')",
                   "err": {},
-                  "uuid": "298aa795-b33d-4377-a1ad-1ca9cd1fdbd5",
-                  "parentUUID": "2aba0bed-53c4-4243-a6cc-d52c4993ae05",
+                  "uuid": "95640801-89ec-45f2-90b3-c4d640cac21c",
+                  "parentUUID": "1aae3097-4858-45ce-b7e7-dda5f8814c48",
                   "isHook": false,
                   "skipped": false
                 },
@@ -518,7 +363,7 @@
                   "title": "should convert 30.01 to '1.7'",
                   "fullTitle": "mgdlToMMOL(); return .1 decimal with float argument should convert 30.01 to '1.7'",
                   "timedOut": false,
-                  "duration": 1,
+                  "duration": 0,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -527,8 +372,8 @@
                   "context": null,
                   "code": "expect(unit.mgdlToMMOL(30.01)).to.equal('1.7')",
                   "err": {},
-                  "uuid": "a709a204-f9df-47e7-bbad-5e8438af057f",
-                  "parentUUID": "2aba0bed-53c4-4243-a6cc-d52c4993ae05",
+                  "uuid": "10c7e050-f3e2-4855-ae64-3a40b70247b2",
+                  "parentUUID": "1aae3097-4858-45ce-b7e7-dda5f8814c48",
                   "isHook": false,
                   "skipped": false
                 },
@@ -545,22 +390,220 @@
                   "context": null,
                   "code": "expect(unit.mgdlToMMOL(1.06)).to.equal('0.1')",
                   "err": {},
-                  "uuid": "44315292-fd6d-468c-a884-ffada3217bcc",
-                  "parentUUID": "2aba0bed-53c4-4243-a6cc-d52c4993ae05",
+                  "uuid": "51797aa0-5a79-4c99-8a06-a7075d1c3a46",
+                  "parentUUID": "1aae3097-4858-45ce-b7e7-dda5f8814c48",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "298aa795-b33d-4377-a1ad-1ca9cd1fdbd5",
-                "a709a204-f9df-47e7-bbad-5e8438af057f",
-                "44315292-fd6d-468c-a884-ffada3217bcc"
+                "95640801-89ec-45f2-90b3-c4d640cac21c",
+                "10c7e050-f3e2-4855-ae64-3a40b70247b2",
+                "51797aa0-5a79-4c99-8a06-a7075d1c3a46"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 1,
+              "duration": 0,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "b94e04fb-44ef-427d-b87e-f88b74d6a4a7",
+          "title": "round trip conversion MMOL->mgdl->MMOL",
+          "fullFile": "/mnt/c/project/2-2/TestAutomation/testCasesExecutables/test-units.js",
+          "file": "/testCasesExecutables/test-units.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "d6d4ad38-8921-41f0-866f-64a7723d8fb2",
+              "title": "with integer values",
+              "fullFile": "/mnt/c/project/2-2/TestAutomation/testCasesExecutables/test-units.js",
+              "file": "/testCasesExecutables/test-units.js",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "should convert 1 to 18 to 1.0",
+                  "fullTitle": "round trip conversion MMOL->mgdl->MMOL with integer values should convert 1 to 18 to 1.0",
+                  "timedOut": false,
+                  "duration": 0,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "expect(unit.mgdlToMMOL(unit.mmolToMgdl(1))).to.equal('1.0')",
+                  "err": {},
+                  "uuid": "f053b7b6-97a3-412f-8a6b-db61d769a641",
+                  "parentUUID": "d6d4ad38-8921-41f0-866f-64a7723d8fb2",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "f053b7b6-97a3-412f-8a6b-db61d769a641"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 0,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "7dd4dd4b-1203-4682-988f-5202ffc7e0a8",
+              "title": "with float values",
+              "fullFile": "/mnt/c/project/2-2/TestAutomation/testCasesExecutables/test-units.js",
+              "file": "/testCasesExecutables/test-units.js",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "should convert 1.06 to 19 to 1.1",
+                  "fullTitle": "round trip conversion MMOL->mgdl->MMOL with float values should convert 1.06 to 19 to 1.1",
+                  "timedOut": false,
+                  "duration": 0,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "expect(unit.mgdlToMMOL(unit.mmolToMgdl(1.06))).to.equal('1.1')",
+                  "err": {},
+                  "uuid": "91544e4b-7ffc-45f7-bedc-2801d0582689",
+                  "parentUUID": "7dd4dd4b-1203-4682-988f-5202ffc7e0a8",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "91544e4b-7ffc-45f7-bedc-2801d0582689"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 0,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "6ed6a82c-a064-4391-ad88-d7cf38754c3f",
+          "title": "round trip conversion mgdl->MMOL->mgdl",
+          "fullFile": "/mnt/c/project/2-2/TestAutomation/testCasesExecutables/test-units.js",
+          "file": "/testCasesExecutables/test-units.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "0bba2e83-f465-4795-9e86-2992ded833ed",
+              "title": "with integer values",
+              "fullFile": "/mnt/c/project/2-2/TestAutomation/testCasesExecutables/test-units.js",
+              "file": "/testCasesExecutables/test-units.js",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "should convert 36 to 2.0 to 36",
+                  "fullTitle": "round trip conversion mgdl->MMOL->mgdl with integer values should convert 36 to 2.0 to 36",
+                  "timedOut": false,
+                  "duration": 0,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "expect(unit.mmolToMgdl(unit.mgdlToMMOL(36))).to.equal(36)",
+                  "err": {},
+                  "uuid": "93081a78-8b2a-48cf-8b98-ff78ae6df530",
+                  "parentUUID": "0bba2e83-f465-4795-9e86-2992ded833ed",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "93081a78-8b2a-48cf-8b98-ff78ae6df530"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 0,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "f641ce4e-7bef-4881-add6-ce9b5832d843",
+              "title": "with float values",
+              "fullFile": "/mnt/c/project/2-2/TestAutomation/testCasesExecutables/test-units.js",
+              "file": "/testCasesExecutables/test-units.js",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "should convert 21.3 to 1.2 to 21.3",
+                  "fullTitle": "round trip conversion mgdl->MMOL->mgdl with float values should convert 21.3 to 1.2 to 21.3",
+                  "timedOut": false,
+                  "duration": 0,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "expect(unit.mmolToMgdl(unit.mgdlToMMOL(21.3))).to.equal(21)",
+                  "err": {
+                    "message": "AssertionError: expected 22 to equal 21",
+                    "estack": "AssertionError: expected 22 to equal 21\n    at Context.<anonymous> (testCasesExecutables/test-units.js:95:63)",
+                    "diff": "- 22\n+ 21\n"
+                  },
+                  "uuid": "a8548b35-d584-4511-b582-64fd784990ef",
+                  "parentUUID": "f641ce4e-7bef-4881-add6-ce9b5832d843",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [],
+              "failures": [
+                "a8548b35-d584-4511-b582-64fd784990ef"
+              ],
+              "pending": [],
+              "skipped": [],
+              "duration": 0,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000

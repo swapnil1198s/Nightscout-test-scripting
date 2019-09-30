@@ -16,7 +16,7 @@ describe('mmolToMgdl(); return int', function() {
     })
 
     context('with integer argument', function(){
-        it('should convert 1 to 18', function(){
+        it('should conver 1 to 18', function(){
             expect(unit.mmolToMgdl(1)).to.equal(18)
         })
         it('should convert 2 to 36', function(){
@@ -31,7 +31,7 @@ describe('mmolToMgdl(); return int', function() {
         it('should convert 1.145 to 21', function(){
             expect(unit.mmolToMgdl(1.145)).to.equal(21)
         })
-        it('should convert 1.06 to 19', function(){
+        it('should counvert 1.06 to 19', function(){
             expect(unit.mmolToMgdl(1.06)).to.equal(19)
         })
     })
@@ -63,8 +63,36 @@ describe('mgdlToMMOL(); return .1 decimal', function() {
         it('should convert 30.01 to \'1.7\'', function(){
             expect(unit.mgdlToMMOL(30.01)).to.equal('1.7')
         })
-        it('should convert 1.06 to \'0.1\'', function(){
+        it('should counvert 1.06 to \'0.1\'', function(){
             expect(unit.mgdlToMMOL(1.06)).to.equal('0.1')
+        })
+    })
+})
+
+describe('round trip conversion MMOL->mgdl->MMOL', function(){
+    context('with integer values', function(){
+        it('should convert 1 to 18 to 1.0', function(){
+            expect(unit.mgdlToMMOL(unit.mmolToMgdl(1))).to.equal('1.0')
+        })
+    })
+
+    context('with float values', function(){
+        it('should convert 1.06 to 19 to 1.1', function(){
+            expect(unit.mgdlToMMOL(unit.mmolToMgdl(1.06))).to.equal('1.1')
+        })
+    })
+})
+
+describe('round trip conversion mgdl->MMOL->mgdl', function(){
+    context('with integer values', function(){
+        it('should convert 36 to 2.0 to 36', function(){
+            expect(unit.mmolToMgdl(unit.mgdlToMMOL(36))).to.equal(36)
+        })
+    })
+
+    context('with float values', function(){
+        it('should convert 21.3 to 1.2 to 21.3', function(){
+            expect(unit.mmolToMgdl(unit.mgdlToMMOL(21.3))).to.equal(21)
         })
     })
 })
