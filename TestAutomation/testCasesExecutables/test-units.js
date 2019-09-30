@@ -16,7 +16,7 @@ describe('mmolToMgdl(); return int', function() {
     })
 
     context('with integer argument', function(){
-        it('should conver 1 to 18', function(){
+        it('should convert 1 to 18', function(){
             expect(unit.mmolToMgdl(1)).to.equal(18)
         })
         it('should convert 2 to 36', function(){
@@ -31,7 +31,7 @@ describe('mmolToMgdl(); return int', function() {
         it('should convert 1.145 to 21', function(){
             expect(unit.mmolToMgdl(1.145)).to.equal(21)
         })
-        it('should counvert 1.06 to 19', function(){
+        it('should convert 1.06 to 19', function(){
             expect(unit.mmolToMgdl(1.06)).to.equal(19)
         })
     })
@@ -63,7 +63,7 @@ describe('mgdlToMMOL(); return .1 decimal', function() {
         it('should convert 30.01 to \'1.7\'', function(){
             expect(unit.mgdlToMMOL(30.01)).to.equal('1.7')
         })
-        it('should counvert 1.06 to \'0.1\'', function(){
+        it('should convert 1.06 to \'0.1\'', function(){
             expect(unit.mgdlToMMOL(1.06)).to.equal('0.1')
         })
     })
