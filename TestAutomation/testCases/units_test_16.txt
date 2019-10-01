@@ -2,19 +2,16 @@ Test ID:
     units_test_16
 
 Requirements being tested:
-    reversibility of conversion functions (lack of rounding errors) when given float inputs
+	roundtrip conversion mgdl —> mmol —> mgdl with a float input
 
 Component being tested:
-    units.js
+	units.js
 
 Method being tested:
-    mgdlToMMOL(mmoltoMgdl())
+	mmolToMgdl(mgdlToMMOL())
 
 Function:
-    mmolToMgdl converts an mmol measurement to Mgdl
-    mgdlToMMOL converts an MGDL measurement to mmol
-    both are called to ensure that they work well together
-    mmoltoMgdl(mgdlToMMOL(val)) should == val
+	roundtrip conversion from mgdl to mmol to mgdl
 
 Input:
     21.3
