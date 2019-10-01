@@ -15,6 +15,7 @@ function:
     mmolToMgdl converts an mmol measurement to Mgdl
     mgdlToMMOL converts an MGDL measurement to mmol
     both are called to ensure that they work well together
+    mmoltoMgdl(mgdlToMMOL(val)) should == val
 
 input:
     21.3
