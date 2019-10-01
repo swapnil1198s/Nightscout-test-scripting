@@ -1,0 +1,23 @@
+Test ID:
+	unit_test_1
+
+Requirements being tested
+	Error handling of conversion function when given a invalid input
+
+Component being tested:
+	units.js
+
+Method being tested:
+	mmolToMgdl()
+
+File:
+	unit.js
+
+Function: 
+	mmol to mcdl conversion
+
+Input:
+	‘3’
+
+Expected output:
+	TypeError

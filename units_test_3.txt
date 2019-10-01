@@ -1,0 +1,23 @@
+Test ID:
+	unit_test_3
+
+Requirements being tested:
+	Conversion of mol to mcdl with a integer argument
+	
+Component being tested:
+	units.js
+
+Method being tested:
+	mmolToMgdl()
+
+File:
+	unit.js
+
+Function: 
+	mmol to mcdl conversion
+
+Input:
+	2
+
+Expected output:
+	36
