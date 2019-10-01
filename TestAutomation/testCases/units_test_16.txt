@@ -1,24 +1,24 @@
-test ID:
+Test ID:
     units_test_16
 
-requirement being tested:
+Requirements being tested:
     reversibility of conversion functions (lack of rounding errors) when given float inputs
 
-component being tested:
+Component being tested:
     units.js
 
-method(s) being tested:
+Method being tested:
     mmolToMgdl()
     mgdlToMMOL()
-    
-function:
+
+Function:
     mmolToMgdl converts an mmol measurement to Mgdl
     mgdlToMMOL converts an MGDL measurement to mmol
     both are called to ensure that they work well together
     mmoltoMgdl(mgdlToMMOL(val)) should == val
 
-input:
+Input:
     21.3
 
-expected output:
-    21.3
+Expected output:
+    21

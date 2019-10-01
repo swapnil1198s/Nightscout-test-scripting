@@ -3,18 +3,15 @@ Test ID:
 
 Requirements being tested:
 	Conversion of mol to mcdl with a float argument
-	
+
 Component being tested:
 	units.js
 
 Method being tested:
 	mmolToMgdl()
 
-File:
-	unit.js
-
-Function: 
-	mmol to mcdl conversion
+Function:
+	mmol to mgdl conversion
 
 Input:
 	2.5

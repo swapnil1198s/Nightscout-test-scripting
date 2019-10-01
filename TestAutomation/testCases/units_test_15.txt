@@ -3,7 +3,7 @@ Test ID:
 
 Requirements being tested:
 	roundtrip conversion mgdl —> mmol —> mgdl with a integer input
-	
+
 Component being tested:
 	units.js
 
@@ -11,10 +11,7 @@ Method being tested:
 	mgdlToMMOL()
 	mmolToMgdl()
 
-File:
-	unit.js
-
-Function: 
+Function:
 	roundtrip conversion from mgdl to mmol to mgdl
 
 Input:

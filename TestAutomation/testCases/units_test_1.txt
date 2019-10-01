@@ -1,7 +1,7 @@
 Test ID:
 	unit_test_1
 
-Requirements being tested
+Requirements being tested:
 	Error handling of conversion function when given a invalid input
 
 Component being tested:
@@ -10,11 +10,8 @@ Component being tested:
 Method being tested:
 	mmolToMgdl()
 
-File:
-	unit.js
-
-Function: 
-	mmol to mcdl conversion
+Function:
+	mmol to mgdl conversion
 
 Input:
 	‘3’

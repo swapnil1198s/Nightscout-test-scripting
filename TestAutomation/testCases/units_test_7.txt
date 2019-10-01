@@ -1,23 +1,20 @@
 Test ID:
-	unit_test_12
+	unit_test_7
 
 Requirements being tested:
-	mgdl to mmol conversion given a integer argument 
-	
+	mgdl to mmol conversion given a invalid argument
+
 Component being tested:
 	units.js
 
 Method being tested:
 	mgdlToMMOL()
 
-File:
-	unit.js
-
-Function: 
+Function:
 	mgdl to mmol conversion
 
 Input:
-	1.06
+	‘3’
 
 Expected output:
-	0.1
+	TypeError
