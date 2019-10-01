@@ -11,12 +11,6 @@ method(s) being tested:
     mmolToMgdl()
     mgdlToMMOL()
 
-file:
-    units.js
-
-function:
-    round trip conversion of mgdl -> MMOL -> mgdl
-
 input:
     21.3
 
