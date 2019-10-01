@@ -8,8 +8,7 @@ Component being tested:
 	units.js
 
 Method being tested:
-	mgdlToMMOL()
-	mmolToMgdl()
+	mmolToMgdl(mgdlToMMOL())
 
 Function:
 	roundtrip conversion from mgdl to mmol to mgdl
