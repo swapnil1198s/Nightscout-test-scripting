@@ -8,8 +8,7 @@ Component being tested:
     units.js
 
 Method being tested:
-    mmolToMgdl()
-    mgdlToMMOL()
+    mmoltoMgdl(mgdlToMMOL())
 
 Function:
     mmolToMgdl converts an mmol measurement to Mgdl
