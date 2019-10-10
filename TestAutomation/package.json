@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "test": "mocha testCasesExecutables/* --reporter mochawesome --reporter-options reportDir=reports,reportFilename=testReport"
+    "test": "mocha testCasesExecutables/*"
   },
   "dependencies": {
     "chai": "^4.2.0",
