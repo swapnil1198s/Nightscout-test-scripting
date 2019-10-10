@@ -42,7 +42,7 @@ with open(filename, "w+") as htmlfile:
                 # run NPM test and catch output
                 # line = subprocess.check_output('npm test exit 0', shell=True).decode('utf-8')
 
-                proc = subprocess.Popen('npm test exit 0', shell=True,stdout=subprocess.PIPE)
+                proc = subprocess.Popen('npm test 2>&1', shell=True,stdout=subprocess.PIPE)
                 while True:
                         line = proc.stdout.readline()
                         if not line: break
