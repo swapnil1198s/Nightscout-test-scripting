@@ -1,20 +1,6 @@
-Test ID:
-	unit_test_3
-
-Requirements being tested:
-	Conversion of mol to mcdl with a integer argument
-
-Component being tested:
-	units.js
-
-Method being tested:
-	mmolToMgdl()
-
-Function:
-	mmol to mgdl conversion
-
-Input:
-	2
-
-Expected output:
-	36
+Test ID:unit_test_3
+Requirements being tested:mmolToMgdl should correctly convert integer input 2
+Component being tested:units.js
+Method being tested:mmolToMgdl()
+Input:2
+Expected output:36

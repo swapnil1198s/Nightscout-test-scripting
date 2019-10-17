@@ -1,5 +1,9 @@
 import os, subprocess
 
+# MAIN TEST SCRIPT
+# TO RUN THIS SCRIPT, CD TO 'TestAutomation',
+# then execute the command 'python3 scripts/runAllTests.py
+
 filename = os.path.join('.', 'reports', 'testReport.html')
 casepath = os.path.join('.', 'testCases')
 outpath = os.path.join(os.path.dirname(__file__), 'testCasesExecutables')
@@ -19,8 +23,8 @@ def exeGen(infilepath):
         # infilepath == 'infilepath'
 
         # remove old executables
-        # for infilepath in outfilepath:
-        #         os.remove(infilepath)
+        # for file in outfilepath:
+        #         os.remove(file)
 
         # generate new executable
         # do stuff here
@@ -35,6 +39,7 @@ with open(filename, "w+") as htmlfile:
 
         for infilepath in os.listdir(casepath):
                 print('generate test: ', infilepath, outpath)
+                htmlfile.write('<p style="margin-left: 0px">'+'Test ' +infilepath +'</p>\n')
 
                 # generate executable based on line
                 exeGen(infilepath)
@@ -42,22 +47,25 @@ with open(filename, "w+") as htmlfile:
                 # run NPM test and catch output
                 # line = subprocess.check_output('npm test exit 0', shell=True).decode('utf-8')
 
-                proc = subprocess.Popen('npm test exit 0', shell=True,stdout=subprocess.PIPE)
-                while True:
-                        line = proc.stdout.readline()
-                        if not line: break
+                proc = subprocess.Popen('npm test 2>&1', shell=True,stdout=subprocess.PIPE)
+
+                line = proc.stdout.readline()
+                while line:
+                        line = line.decode('utf-8')
 
                         # write output to htmlfile
-                        print(line)
-                        htmlfile.write('<p style="margin-left: 0px">'+infilepath+': '+str(line) +'</p>\n')
-
+                        # print(line)
+                        htmlfile.write('<p style="margin-left: 40px">'+str(line) +'</p>\n')
+                        line = proc.stdout.readline()
                 break
         print("done")
 
         htmlfile.write('''</head>''')
 
 try: subprocess.call(['xdg-open', filename])
-except: os.startfile(filename)
+except:
+        try: os.startfile(filename)
+        except: pass
 
 # delete old html, generate new empty one
 

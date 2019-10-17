@@ -1,20 +1,6 @@
-Test ID:
-	unit_test_8
-
-Requirements being tested:
-	mgdl to mmol conversion given a integer argument
-
-Component being tested:
-	units.js
-
-Method being tested:
-	mgdlToMMOL()
-
-Function:
-	mgdl to mmol conversion
-
-Input:
-	18
-
-Expected output:
-	1.0
+Test ID:unit_test_8
+Requirements being tested:mgdlToMMOL should correctly convert integer input 18
+Component being tested:units.js
+Method being tested:mgdlToMMOL()
+Input:18
+Expected output:1.0

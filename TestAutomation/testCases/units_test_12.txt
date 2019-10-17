@@ -1,20 +1,6 @@
-Test ID:
-	unit_test_12
-
-Requirements being tested:
-	mgdl to mmol conversion given a integer argument
-
-Component being tested:
-	units.js
-
-Method being tested:
-	mgdlToMMOL()
-
-Function:
-	mgdl to mmol conversion
-
-Input:
-	1.06
-
-Expected output:
-	0.1
+Test ID:unit_test_12
+Requirements being tested:mgdlToMMOL should correctly convert float input 1.06
+Component being tested:units.js
+Method being tested:mgdlToMMOL()
+Input:1.06
+Expected output:0.1
