@@ -19,10 +19,15 @@ def exeGen(infilepath):
         # infilepath == 'infilepath'
 
         # remove old executables
-        # for infilepath in outfilepath:
-        #         os.remove(infilepath)
+        for file in outfilepath:
+                os.remove(file)
 
         # generate new executable
+        exeTemplate = open(exectemplatepath, "w+")
+        testCase = open(infilepath, "r")
+        inputs = testCase.readLines()
+        for i in inputs:
+                
         # do stuff here
 
 './reports/testReport.html' == os.path.join('.', 'reports', 'testReport.html')
