@@ -1,20 +1,6 @@
-Test ID:
-	unit_test_7
-
-Requirements being tested:
-	mgdl to mmol conversion given a invalid argument
-
-Component being tested:
-	units.js
-
-Method being tested:
-	mgdlToMMOL()
-
-Function:
-	mgdl to mmol conversion
-
-Input:
-	‘3’
-
-Expected output:
-	TypeError
+Test ID:unit_test_7
+Requirements being tested:mgdlToMMOL should throw TypeError when given invalid input
+Component being tested:units.js
+Method being tested:mgdlToMMOL()
+Input:‘3’
+Expected output:TypeError()
