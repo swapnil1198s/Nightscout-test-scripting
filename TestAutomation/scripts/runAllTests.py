@@ -27,6 +27,11 @@ def exeGen(infilepath):
         #         os.remove(file)
 
         # generate new executable
+        exeTemplate = open(exectemplatepath, "w+")
+        testCase = open(infilepath, "r")
+        inputs = testCase.readLines()
+        for i in inputs:
+                
         # do stuff here
 
 './reports/testReport.html' == os.path.join('.', 'reports', 'testReport.html')
