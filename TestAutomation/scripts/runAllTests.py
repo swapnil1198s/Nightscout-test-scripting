@@ -18,39 +18,12 @@ except: print('No infilepath to delete!')
 
 print(filename, os.path.exists(filename))
 
-def exeGen(infilepath):
-        print('exegen', infilepath, outpath)
-        # infilepath == 'infilepath'
-
-        # remove old executables
-        # for file in outfilepath:
-        #         os.remove(file)
-
-        # generate new executable
-        exeTemplate = open(exectemplatepath, "w+")
-        testCase = open(infilepath, "r")
-        inputs = testCase.readLines()
-        for i in inputs:
-                pass
-        # do stuff here
-
-        exeTemplate.close()
-        testCase.close()
-
+from tempexegen import exeGen
 # './reports/testReport.html' == os.path.join('.', 'reports', 'testReport.html')
 # hacky minithread to fake exegen
 from shutil import copy
 import time
-def tempGen(i):
-        if i == 0:
-                copy('temp/test-1.js', 'testCasesExecutables/test.js')
-        if i == 1:
-                copy('temp/test-2.js', 'testCasesExecutables/test.js')
-        if i == 2:
-                copy('temp/test-3.js', 'testCasesExecutables/test.js')
-        if i == 3:
-                copy('temp/test-4.js', 'testCasesExecutables/test.js')
-
+from tempgen import tempGen
 
 with open(filename, "w+") as htmlfile:
         htmlfile.write('''<!DOCTYPE html>\n
@@ -61,11 +34,11 @@ with open(filename, "w+") as htmlfile:
         for infilepath in os.listdir(casepath):
                 print('generate test: ', infilepath, outpath)
                 htmlfile.write('<p style="margin-left: 0px">'+'Test ' +infilepath +'</p>\n')
-                
+
                 break
 
                 # generate executable based on line
-                exeGen(os.path.join(casepath, infilepath))
+                exeGen(os.path.join(casepath, infilepath), outpath, exectemplatepath)
 
         for i in range(4):
                 print('running test', i)
