@@ -23,16 +23,24 @@ def exeGen(infilepath):
         # infilepath == 'infilepath'
 
         # remove old executables
-        # for file in outfilepath:
-        #         os.remove(file)
+         for file in outfilepath:
+                 os.remove(file)
 
         # generate new executable
-        exeTemplate = open(exectemplatepath, "w+")
-        testCase = open(infilepath, "r")
-        inputs = testCase.readLines()
-        for i in inputs:
                 
+
         # do stuff here
+        exeTemplate = open(exectemplatepath, "r")
+        testCase = open(infilepath, "r")
+        executable = open(outfilepath, "a+")
+        executableString = executable.read()
+        inputs = testCase.readLines()
+        for line in inputs:
+                value = line.split(':')
+                replacement = value[1] 
+                executableString.replace("%", replacement, 1)
+        executable.write(executableString)
+
 
 './reports/testReport.html' == os.path.join('.', 'reports', 'testReport.html')
 
