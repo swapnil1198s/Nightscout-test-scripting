@@ -31,10 +31,26 @@ def exeGen(infilepath):
         testCase = open(infilepath, "r")
         inputs = testCase.readLines()
         for i in inputs:
-                
+                pass
         # do stuff here
 
-'./reports/testReport.html' == os.path.join('.', 'reports', 'testReport.html')
+        exeTemplate.close()
+        testCase.close()
+
+# './reports/testReport.html' == os.path.join('.', 'reports', 'testReport.html')
+# hacky minithread to fake exegen
+from shutil import copy
+import time
+def tempGen(i):
+        if i == 0:
+                copy('temp/test-1.js', 'testCasesExecutables/test.js')
+        if i == 1:
+                copy('temp/test-2.js', 'testCasesExecutables/test.js')
+        if i == 2:
+                copy('temp/test-3.js', 'testCasesExecutables/test.js')
+        if i == 3:
+                copy('temp/test-4.js', 'testCasesExecutables/test.js')
+
 
 with open(filename, "w+") as htmlfile:
         htmlfile.write('''<!DOCTYPE html>\n
@@ -45,24 +61,32 @@ with open(filename, "w+") as htmlfile:
         for infilepath in os.listdir(casepath):
                 print('generate test: ', infilepath, outpath)
                 htmlfile.write('<p style="margin-left: 0px">'+'Test ' +infilepath +'</p>\n')
+                
+                break
 
                 # generate executable based on line
-                exeGen(infilepath)
+                exeGen(os.path.join(casepath, infilepath))
 
-                # run NPM test and catch output
-                # line = subprocess.check_output('npm test exit 0', shell=True).decode('utf-8')
-
+        for i in range(4):
+                print('running test', i)
+                tempGen(i)
+                time.sleep(.25)
+                print('executing')
                 proc = subprocess.Popen('npm test 2>&1', shell=True,stdout=subprocess.PIPE)
 
                 line = proc.stdout.readline()
+                if line is not None:
+                        htmlfile.write('<p style="margin-left: 40px">')
+                j = 0
                 while line:
-                        line = line.decode('utf-8')
-
-                        # write output to htmlfile
-                        # print(line)
-                        htmlfile.write('<p style="margin-left: 40px">'+str(line) +'</p>\n')
+                        line = line.decode('utf-8').strip('\t').strip('\r').strip('\n').strip('\@').strip('>')
+                        if len(line.strip(' ')) > 0 and j > 2:
+                                # write output to htmlfile
+                                # print(line)
+                                htmlfile.write(line + '\t|\t')
                         line = proc.stdout.readline()
-                break
+                        j += 1
+                htmlfile.write('</p>\n')
         print("done")
 
         htmlfile.write('''</head>''')
