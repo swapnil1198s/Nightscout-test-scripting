@@ -251,4 +251,8 @@ function init (env, ctx) {
   return authorization;
 }
 
-module.exports = init;
+// original export
+// module.exports = init;
+
+// modified export
+module.exports = getRemoteIP;
