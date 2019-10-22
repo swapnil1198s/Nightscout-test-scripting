@@ -6,7 +6,7 @@ def exeGen(infilepath, outfilepath, exectemplatepath):
     testCase = open(infilepath, "r")
     executable = open(outfilepath, "w")
     executableString = exeTemplate.read()
-    inputs = testCase.readLines()
+    inputs = testCase.readlines()
 
     for line in inputs:
         value = line.split(':')
