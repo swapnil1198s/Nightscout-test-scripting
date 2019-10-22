@@ -18,12 +18,31 @@ except: print('No infilepath to delete!')
 
 print(filename, os.path.exists(filename))
 
-from tempexegen import exeGen
+def exeGen(infilepath):
+        print('exegen', infilepath, outpath)
+        # infilepath == 'infilepath'
+
+        # remove old executables
+        # for file in outfilepath:
+        #     os.remove(file)
+
+        # generate new executable
+
+
+        # do stuff here
+        exeTemplate = open(exectemplatepath, "r")
+        testCase = open(infilepath, "r")
+        executable = open(outfilepath, "w")
+        executableString = executable.read()
+        inputs = testCase.readLines()
+        for line in inputs:
+                value = line.split(':')
+                replacement = value[1]
+                executableString.replace("%", replacement, 1)
+        executable.write(executableString)
+
+
 # './reports/testReport.html' == os.path.join('.', 'reports', 'testReport.html')
-# hacky minithread to fake exegen
-from shutil import copy
-import time
-from tempgen import tempGen
 
 with open(filename, "w+") as htmlfile:
         htmlfile.write('''<!DOCTYPE html>\n
@@ -35,15 +54,15 @@ with open(filename, "w+") as htmlfile:
                 print('generate test: ', infilepath, outpath)
                 htmlfile.write('<p style="margin-left: 0px">'+'Test ' +infilepath +'</p>\n')
 
-                break
+                # break
 
                 # generate executable based on line
-                exeGen(os.path.join(casepath, infilepath), outpath, exectemplatepath)
+                exeGen(os.path.join(infilepath))
 
-        for i in range(4):
-                print('running test', i)
-                tempGen(i)
-                time.sleep(.25)
+        # for i in range(4):
+        #         print('running test', i)
+        #         tempGen(i)
+        #         time.sleep(.25)
                 print('executing')
                 proc = subprocess.Popen('npm test 2>&1', shell=True,stdout=subprocess.PIPE)
 
