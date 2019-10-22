@@ -11,14 +11,14 @@ outpath = os.path.join(os.path.dirname(__file__), 'testCasesExecutables')
 casetemplatepath = os.path.join('.', 'scripts', 'testcaseTemplate')
 exectemplatepath = os.path.join('.', 'scripts', 'executableTemplate')
 
-outfilepath = os.path.join('.', 'testCaseExecutables', 'test.js')
+outfilepath = os.path.join('.', 'testCasesExecutables', 'test.js')
 
 try: os.remove(filename)
 except: print('No infilepath to delete!')
 
 print(filename, os.path.exists(filename))
 
-from tempexegen import exeGen
+from exegen import exeGen
 # './reports/testReport.html' == os.path.join('.', 'reports', 'testReport.html')
 # hacky minithread to fake exegen
 from shutil import copy
@@ -35,15 +35,15 @@ with open(filename, "w+") as htmlfile:
                 print('generate test: ', infilepath, outpath)
                 htmlfile.write('<p style="margin-left: 0px">'+'Test ' +infilepath +'</p>\n')
 
-                break
+                # break
 
                 # generate executable based on line
-                exeGen(os.path.join(casepath, infilepath), outpath, exectemplatepath)
+                exeGen(os.path.join(casepath, infilepath), outfilepath, exectemplatepath)
 
-        for i in range(4):
-                print('running test', i)
-                tempGen(i)
-                time.sleep(.25)
+        # for i in range(4):
+        #         print('running test', i)
+        #         tempGen(i)
+        #         time.sleep(.25)
                 print('executing')
                 proc = subprocess.Popen('npm test 2>&1', shell=True,stdout=subprocess.PIPE)
 
