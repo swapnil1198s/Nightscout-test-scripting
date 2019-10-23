@@ -11,30 +11,19 @@ outpath = os.path.join(os.path.dirname(__file__), 'testCasesExecutables')
 casetemplatepath = os.path.join('.', 'scripts', 'testcaseTemplate')
 exectemplatepath = os.path.join('.', 'scripts', 'executableTemplate')
 
-outfilepath = os.path.join('.', 'testCaseExecutables', 'test.js')
+outfilepath = os.path.join('.', 'testCasesExecutables', 'test.js')
 
 try: os.remove(filename)
 except: print('No infilepath to delete!')
 
 print(filename, os.path.exists(filename))
 
-def exeGen(infilepath):
-        print('exegen', infilepath, outpath)
-        # infilepath == 'infilepath'
-
-        # remove old executables
-        # for file in outfilepath:
-        #         os.remove(file)
-
-        # generate new executable
-        exeTemplate = open(exectemplatepath, "w+")
-        testCase = open(infilepath, "r")
-        inputs = testCase.readLines()
-        for i in inputs:
-                
-        # do stuff here
-
-'./reports/testReport.html' == os.path.join('.', 'reports', 'testReport.html')
+from exegen import exeGen
+# './reports/testReport.html' == os.path.join('.', 'reports', 'testReport.html')
+# hacky minithread to fake exegen
+from shutil import copy
+import time
+from tempgen import tempGen
 
 with open(filename, "w+") as htmlfile:
         htmlfile.write('''<!DOCTYPE html>\n
@@ -46,23 +35,31 @@ with open(filename, "w+") as htmlfile:
                 print('generate test: ', infilepath, outpath)
                 htmlfile.write('<p style="margin-left: 0px">'+'Test ' +infilepath +'</p>\n')
 
+                # break
+
                 # generate executable based on line
-                exeGen(infilepath)
+                exeGen(os.path.join(casepath, infilepath), outfilepath, exectemplatepath)
 
-                # run NPM test and catch output
-                # line = subprocess.check_output('npm test exit 0', shell=True).decode('utf-8')
-
+        # for i in range(4):
+        #         print('running test', i)
+        #         tempGen(i)
+        #         time.sleep(.25)
+                print('executing')
                 proc = subprocess.Popen('npm test 2>&1', shell=True,stdout=subprocess.PIPE)
 
                 line = proc.stdout.readline()
+                if line is not None:
+                        htmlfile.write('<p style="margin-left: 40px">')
+                j = 0
                 while line:
-                        line = line.decode('utf-8')
-
-                        # write output to htmlfile
-                        # print(line)
-                        htmlfile.write('<p style="margin-left: 40px">'+str(line) +'</p>\n')
+                        line = line.decode('utf-8').strip('\t').strip('\r').strip('\n').strip('\@').strip('>')
+                        if len(line.strip(' ')) > 0 and j > 2:
+                                # write output to htmlfile
+                                # print(line)
+                                htmlfile.write(line + '\t|\t')
                         line = proc.stdout.readline()
-                break
+                        j += 1
+                htmlfile.write('</p>\n')
         print("done")
 
         htmlfile.write('''</head>''')

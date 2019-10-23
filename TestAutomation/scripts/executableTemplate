@@ -1,12 +1,10 @@
-var unit = require('../project/src/%');         //filename (w/o extension)
+var src = require('../project/src/%');
 var expect = require('chai').expect;
 
-describe('%(); return %', function() {         //function name, return type
-    context('%', function(){                   //test description (text)
-        it('%', function(){                    //describe input, output (text)
-            expect(function() {
-                unit.mmolToMgdl(%)             //input value
-              }).to.throw(%)                   //expected output value
+describe('%', function(){
+    context('%', function(){
+        it('%', function(){
+            expect(src.%(%)).to.equal(%)
         })
     })
 })
