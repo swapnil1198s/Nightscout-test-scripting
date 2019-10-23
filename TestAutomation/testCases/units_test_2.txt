@@ -1,6 +1,6 @@
 Test ID:unit_test_2
 Requirements being tested:mmolToMgdl should correctly convert integer input 1
 Component being tested:units.js
-Method being tested:mmolToMgdl()
+Method being tested:mmolToMgdl
 Input:1
 Expected output:18

@@ -1,6 +1,6 @@
 Test ID:unit_test_6
 Requirements being tested:Conversion of mol to mcdl with a float argument
 Component being tested:units.js
-Method being tested:mmolToMgdl()
+Method being tested:mmolToMgdl
 Input:1.06
 Expected output:19

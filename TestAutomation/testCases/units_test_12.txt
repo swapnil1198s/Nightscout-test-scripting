@@ -1,6 +1,6 @@
 Test ID:unit_test_12
 Requirements being tested:mgdlToMMOL should correctly convert float input 1.06
 Component being tested:units.js
-Method being tested:mgdlToMMOL()
+Method being tested:mgdlToMMOL
 Input:1.06
 Expected output:0.1
