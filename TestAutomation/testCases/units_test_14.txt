@@ -1,6 +1,0 @@
-Test ID:unit_test_14
-Requirements being tested:mgdlToMMOL should correcly return the rounded initial input when given the result of mmolToMgdl for float input 1.06
-Component being tested:units.js
-Method being tested:mgdlToMMOL
-Input:mmolToMgdl(1.06)
-Expected output:1.1

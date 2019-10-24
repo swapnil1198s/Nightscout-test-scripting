@@ -5,7 +5,7 @@ def reportline(filename, data):
     reportline += ': '
 
     for line in data:
-        line = line.decode('utf-8').strip('\t').strip('\r').strip('\n').strip('\@').strip('>')
+        line = line.strip('\t').strip('\r').strip('\n').strip('\@').strip('>')
 
         if len(line.strip(' ')) > 0:
             reportline += line
