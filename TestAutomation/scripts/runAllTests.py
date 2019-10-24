@@ -39,11 +39,17 @@ with open(filename, "w") as htmlfile:
         print('executing')
         proc = subprocess.Popen('npm start 2>&1', shell=True,stdout=subprocess.PIPE)
 
-        print(proc)
-
         lines = proc.stdout.readlines()
-        infilepath += ': '
-        infilepath += foo.oracle(1, 2)
+        resval = lines[-1].decode('utf-8')
+
+        casefile = open(os.path.join(casepath, infilepath),"r")
+        lines = casefile.readlines()
+        casefile.close()
+        expectval = lines[-1].split(':')[-1]
+
+        infilepath += ' | '
+        infilepath += foo.oracle(expectval, resval)
+        infilepath += ' | Expected: '+expectval+", Recieved: "+resval+" | "
         rline = reportline(infilepath,
         lines)
 
