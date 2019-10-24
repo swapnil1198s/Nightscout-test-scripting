@@ -1,9 +1,17 @@
 import os, subprocess
+import importlib.util
 from shutil import copy
 import time
 from exegen import exeGen
 from writeTest import test
+from minigen import minigen
 from reportgen import reportline
+oraclepath = os.path.abspath(os.path.join('.', 'oracles', 'oracle.py'))
+spec = importlib.util.spec_from_file_location("oracle.oracle", oraclepath)
+foo = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(foo)
+# res = foo.oracle(1, 2)
+# from ..oracles.oracle import oracle
 
 # MAIN TEST SCRIPT
 # TO RUN THIS SCRIPT, CD TO 'TestAutomation',
@@ -25,12 +33,17 @@ with open(filename, "w") as htmlfile:
         print('generate test: ', infilepath, outpath)
 
         # exeGen(os.path.join(casepath, infilepath), outfilepath, exectemplatepath)
-        test(os.path.join(casepath, infilepath),outfilepath)
+        # test(os.path.join(casepath, infilepath),outfilepath)
+        minigen(os.path.join(casepath, infilepath),outfilepath)
 
         print('executing')
-        proc = subprocess.Popen('npm test 2>&1', shell=True,stdout=subprocess.PIPE)
+        proc = subprocess.Popen('npm start 2>&1', shell=True,stdout=subprocess.PIPE)
+
+        print(proc)
 
         lines = proc.stdout.readlines()
+        infilepath += ': '
+        infilepath += foo.oracle(1, 2)
         rline = reportline(infilepath,
         lines)
 
