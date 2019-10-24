@@ -1,7 +1,7 @@
 'use strict';
 
 function mgdlToMMOL(mgdl) {
-  return (Math.round((mgdl / 18) * 10) / 10).toFixed(1);
+  return (Math.round((mgdl / 18) * 10).toFixed(1)/10);
 }
 
 function mmolToMgdl(mgdl) {
