@@ -1,10 +1,6 @@
 {
   "scripts": {
-    "test": "mocha testCasesExecutables/*"
-  },
-  "dependencies": {
-    "chai": "^4.2.0",
-    "mocha": "^6.2.2",
-    "mochawesome": "^4.1.0"
+    "test": "testCasesExecutables/*",
+    "start": "node testCasesExecutables/test.js"
   }
 }
