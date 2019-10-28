@@ -1,6 +1,0 @@
-Test ID:units_test_16
-Requirements being tested:mmolToMgdl should correcly return the initial input when given the result of mgdlToMMOL for float input 21.3
-Component being tested:units.js
-Method being tested:mmolToMgdl(mgdlToMMOL())
-Input:21.3
-Expected output:21

@@ -1,6 +1,6 @@
 Test ID:unit_test_9
 Requirements being tested:mgdlToMMOL should correctly convert integer input 135
 Component being tested:units.js
-Method being tested:mgdlToMMOL()
+Method being tested:mgdlToMMOL
 Input:135
 Expected output:7.5

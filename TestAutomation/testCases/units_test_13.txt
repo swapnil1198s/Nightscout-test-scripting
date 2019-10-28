@@ -1,6 +1,0 @@
-Test ID:unit_test_13
-Requirements being tested:mgdlToMMOL should correcly return the initial input when given the result of mmolToMgdl for integer input 1
-Component being tested:units.js
-Method being tested:mgdlToMMOL(mmolToMgdl())
-Input:1
-Expected output:1.0

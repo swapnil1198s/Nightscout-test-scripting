@@ -1,4 +1,17 @@
 import os, subprocess
+import importlib.util
+from shutil import copy
+import time
+from exegen import exeGen
+from writeTest import test
+from minigen import minigen
+from reportgen import reportline
+oraclepath = os.path.abspath(os.path.join('.', 'oracles', 'oracle.py'))
+spec = importlib.util.spec_from_file_location("oracle.oracle", oraclepath)
+foo = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(foo)
+# res = foo.oracle(1, 2)
+# from ..oracles.oracle import oracle
 
 # MAIN TEST SCRIPT
 # TO RUN THIS SCRIPT, CD TO 'TestAutomation',
@@ -7,76 +20,44 @@ import os, subprocess
 filename = os.path.join('.', 'reports', 'testReport.html')
 casepath = os.path.join('.', 'testCases')
 outpath = os.path.join(os.path.dirname(__file__), 'testCasesExecutables')
-
-casetemplatepath = os.path.join('.', 'scripts', 'testcaseTemplate')
 exectemplatepath = os.path.join('.', 'scripts', 'executableTemplate')
-
 outfilepath = os.path.join('.', 'testCasesExecutables', 'test.js')
 
-try: os.remove(filename)
-except: print('No infilepath to delete!')
+with open(filename, "w") as htmlfile:
+    htmlfile.write('''<!DOCTYPE html>\n
+    <html lang="en-US" style="height: 100%;">\n
+    <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>My List HTML Output</title>\n''')
 
-print(filename, os.path.exists(filename))
+    for infilepath in os.listdir(casepath):
+        print('generate test: ', infilepath, outpath)
 
-from exegen import exeGen
-# './reports/testReport.html' == os.path.join('.', 'reports', 'testReport.html')
-# hacky minithread to fake exegen
-from shutil import copy
-import time
-from tempgen import tempGen
+        # exeGen(os.path.join(casepath, infilepath), outfilepath, exectemplatepath)
+        # test(os.path.join(casepath, infilepath),outfilepath)
+        minigen(os.path.join(casepath, infilepath),outfilepath)
 
-with open(filename, "w+") as htmlfile:
-        htmlfile.write('''<!DOCTYPE html>\n
-        <html lang="en-US" style="height: 100%;">\n
-        <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>My List HTML Output</title>\n''')
+        print('executing')
+        proc = subprocess.Popen('npm start 2>&1', shell=True,stdout=subprocess.PIPE)
 
-        for infilepath in os.listdir(casepath):
-                print('generate test: ', infilepath, outpath)
-                htmlfile.write('<p style="margin-left: 0px">'+'Test ' +infilepath +'</p>\n')
+        lines = proc.stdout.readlines()
+        resval = lines[-1].decode('utf-8')
 
-                # break
+        casefile = open(os.path.join(casepath, infilepath),"r")
+        lines = casefile.readlines()
+        casefile.close()
+        expectval = lines[-1].split(':')[-1]
 
-                # generate executable based on line
-                exeGen(os.path.join(casepath, infilepath), outfilepath, exectemplatepath)
+        infilepath += ' | '
+        infilepath += foo.oracle(expectval, resval)
+        infilepath += ' | Expected: '+expectval+", Recieved: "+resval+" | "
+        rline = reportline(infilepath,
+        lines)
 
-        # for i in range(4):
-        #         print('running test', i)
-        #         tempGen(i)
-        #         time.sleep(.25)
-                print('executing')
-                proc = subprocess.Popen('npm test 2>&1', shell=True,stdout=subprocess.PIPE)
-
-                line = proc.stdout.readline()
-                if line is not None:
-                        htmlfile.write('<p style="margin-left: 40px">')
-                j = 0
-                while line:
-                        line = line.decode('utf-8').strip('\t').strip('\r').strip('\n').strip('\@').strip('>')
-                        if len(line.strip(' ')) > 0 and j > 2:
-                                # write output to htmlfile
-                                # print(line)
-                                htmlfile.write(line + '\t|\t')
-                        line = proc.stdout.readline()
-                        j += 1
-                htmlfile.write('</p>\n')
-        print("done")
-
-        htmlfile.write('''</head>''')
+        htmlfile.write(rline)
+    print("done")
+    htmlfile.write('''</head>''')
 
 try: subprocess.call(['xdg-open', filename])
 except:
-        try: os.startfile(filename)
-        except: pass
-
-# delete old html, generate new empty one
-
-# For each infilepath in Test Cases
-#     delete all executables
-#     generate executable from infilepath
-        # import from script
-#     subprocess.execute('NPM TEST')
-#     pipe output to resutls.hmtl
-        # import from script
-
-# open 'finished' html infilepath
+    try: os.startfile(filename)
+    except: pass
