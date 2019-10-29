@@ -46,28 +46,12 @@ with open(filename, "w") as htmlfile:
     htmlfile.write('''<!DOCTYPE html>\n
     <html lang="en-US" style="height: 100%;">\n
     <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<<<<<<< HEAD
     <title>Testing Report</title>\n''')
     
     htmlfile.write(reportHeader())
     lineCount = 0
     # set maxTableSize to -1 for no limit
     maxTableSize = -1
-    
-=======
-    <title>My List HTML Output</title>\n
-    <table style : "width = 100%"  > 
-        <tr> 
-                <th> Test ID </th>
-                <th> Requirement </th>
-                <th> component </th>
-                <th> method </th>
-                <th> input </th>
-                <th> Expected Output </th>
-                <th> Output </th>
-        </tr>''')
-    htmlfile.write('<tr>')
->>>>>>> 0fc92b95cdd1b73c9f7c1d80dd3c2140473e34e0
     for infilepath in sorted(os.listdir(casepath)):
         print('generate test: ', infilepath, outpath)
         
@@ -85,7 +69,7 @@ with open(filename, "w") as htmlfile:
         casefile = open(os.path.join(casepath, infilepath),"r")
         lines = casefile.readlines()
         casefile.close()
-<<<<<<< HEAD
+
         expectval = lines[-1].split(':')[-1]      
         reportLine='\t\t<tr>\n\t\t\t<td>'+str(lineCount+1)+'</td>\n\t\t\t<td>'
         if (lineCount % maxTableSize == 0 and lineCount != 0 and maxTableSize != -1):
@@ -111,26 +95,6 @@ with open(filename, "w") as htmlfile:
         lineCount += 1
     print("done")
     htmlfile.write('\t\t</table>\n\t</head>')
-=======
-        expectval = lines[-1].split(':')[-1]
-        
-        for input in lines:
-            elementsList = input.split(':')
-            element = elementsList[1]
-            htmlfile.write('<td>' + element + '</td>')
-        
-        #infilepath += ' | '
-        #infilepath += foo.oracle(expectval, resval)
-        #infilepath += ' | Expected: '+expectval+", Recieved: "+resval+" | "
-        #rline = reportline(infilepath,
-        #lines)
-        htmlfile.write('<td>' + resval + '</td>')
-        htmlfile.write('</tr>')
-        #htmlfile.write(rline)
-    
-    print("done")
-    htmlfile.write('''</head></table>''')
->>>>>>> 0fc92b95cdd1b73c9f7c1d80dd3c2140473e34e0
 
 try: subprocess.call(['xdg-open', filename])
 except:
