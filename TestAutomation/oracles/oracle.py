@@ -13,7 +13,7 @@ def oracle(val1, val2):
         if(val1==val2):
             return "Pass"
         elif(type(val1)!=type(val2)):
-            return "TypeError"
+            return "Fail"
         else:
             return "Fail"
     except Exception as e:
