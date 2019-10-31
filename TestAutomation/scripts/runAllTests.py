@@ -60,42 +60,41 @@ with open(filename, "w") as htmlfile:
         oracle_exegen(os.path.join(casepath, infilepath),outfilepath)
 
         print('executing')
-        # proc = subprocess.Popen('npm run oracle 2>&1', shell=True,stdout=subprocess.PIPE)
+        proc = subprocess.Popen('npm run oracle 2>&1', shell=True,stdout=subprocess.PIPE)
 
-        os.system('npm run oracle')
-
-        break
+        # os.system('npm run oracle')
+        # break
 
         lines = proc.stdout.readlines()
-        resval = lines[-1].decode('utf-8')
+        expectval = lines[-3].decode('utf-8').strip('\n').strip('\r').strip()
+        returnval = lines[-2].decode('utf-8').strip('\n').strip('\r').strip()
+        resval = lines[-1].decode('utf-8').strip('\n').strip('\r')
 
         print('results:', resval)
-        print(lines)
+        print('expectval:', expectval)
+        print('returnval:', returnval)
 
         casefile = open(os.path.join(casepath, infilepath),"r")
         lines = casefile.readlines()
         casefile.close()
 
-        expectval = lines[-1].split(':')[-1]
         reportLine='\t\t<tr>\n\t\t\t<td>'+str(lineCount+1)+'</td>\n\t\t\t<td>'
         if (lineCount % maxTableSize == 0 and lineCount != 0 and maxTableSize != -1):
             reportLine='\t</table>\n\t\t<br>'+reportHeader()+reportLine
 
-        if (mod.oracle(expectval, resval) == "Pass"):
+        if resval == "Pass":
             reportLine += 'Pass &#x2705</td>\n'
-        elif (mod.oracle(expectval, resval) == "Fail"):
+        elif resval == "Fail":
             reportLine += 'Fail &#x26D4</td>\n'
-        elif (mod.oracle(expectval, resval) == "TypeError"):
-            reportLine += 'Error</td>\n'
         else:
-            reportLine +='</td>\n'
+            reportLine += 'Error</td>\n'
 
         for input in lines:
             elementsList = input.split(':')
             element = elementsList[1].strip()
             reportLine += '\t\t\t<td>' + element + '</td>\n'
 
-        reportLine += '\t\t\t<td>' + resval.strip() + '</td>\n'
+        reportLine += '\t\t\t<td>' + returnval.strip() + '</td>\n'
         reportLine += '\t\t</tr>\n'
         htmlfile.write(reportLine)
         lineCount += 1

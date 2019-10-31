@@ -2,5 +2,5 @@ Test ID:unit_test_7
 Requirements being tested:mgdlToMMOL should throw TypeError when given invalid input
 Component being tested:units.js
 Method being tested:mgdlToMMOL
-Input:'3'
-Expected output:TypeError()
+Input:"3"
+Expected output:NaN

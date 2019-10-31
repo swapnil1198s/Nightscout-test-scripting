@@ -18,15 +18,16 @@ def oracle_exegen(inFile, outFile):
     expectedOutput = testOracle.strip("\n").strip()
 
     output = '''
-        var src = require("../project/src/'''+component+'''");
+        var src = require("../project/src/'''+component+'''")
         function runtest(){
             res = [
                 '''+expectedOutput +''',
                 src.'''+methodName +'('+inputReceived +''')
             ];
-            console.log(res)
+            console.log(res[0])
+            console.log(res[1])
             return(res)
-        };
+        }
         module.exports = runtest;'''
 
     print("Done")
