@@ -17,14 +17,17 @@ def oracle_exegen(inFile, outFile):
     inputReceived = testInput.strip("\n").strip()
     expectedOutput = testOracle.strip("\n").strip()
 
-    output += 'import { mmolToMgdl } from "../project/src/units.js"\n'
-
-    # output += 'var src = require("../project/src/' +component+'")\n'
-
-    output += 'function runtest(){\n'
-    output += '    return ['+expectedOutput +', '+methodName +'('+inputReceived +')]\n'
-    output += '}\n'
-    output += 'module.exports = runtest\n'
+    output = '''
+        var src = require("../project/src/'''+component+'''");
+        function runtest(){
+            res = [
+                '''+expectedOutput +''',
+                src.'''+methodName +'('+inputReceived +''')
+            ];
+            console.log(res)
+            return(res)
+        };
+        module.exports = runtest;'''
 
     print("Done")
 

@@ -1,13 +1,11 @@
-srcname = "units.js"
-funcname = "mmolToMgdl"
-inval = '3'
-expectval = TypeError()
+console.log('hi')
 
-pathval = "../project/src/" +srcname
-
-var src = require(pathval)
-
+var src = require("../project/src/units.js")
 function runtest(){
-    return [expectval, src.funcname(inval)]
-};
+    var res = [NaN, src.mmolToMgdl('3')]
+    console.log(res)
+    return res
+}
 module.exports = runtest
+
+// runtest()

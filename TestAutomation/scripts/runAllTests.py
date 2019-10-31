@@ -64,6 +64,8 @@ with open(filename, "w") as htmlfile:
 
         os.system('npm run oracle')
 
+        break
+
         lines = proc.stdout.readlines()
         resval = lines[-1].decode('utf-8')
 

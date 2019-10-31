@@ -1,10 +1,11 @@
-'use strict'
+'use strict';
 
-import { runtest } from "./testCasesExecutables/test.js"
+var tst = require("../testCasesExecutables/test")
 
-console.log('here1')
+var res = new Array(tst.runtest())
 
-var res = runtest()
+console.log(res)
+
 var expectval = res[0]
 var returnval = res[1]
 
