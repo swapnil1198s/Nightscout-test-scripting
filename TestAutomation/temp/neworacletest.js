@@ -1,11 +1,13 @@
-srcname = %
-funcname = %
-inval = %
+srcname = "units.js"
+funcname = "mmolToMgdl"
+inval = '3'
+expectval = TypeError()
 
 pathval = "../project/src/" +srcname
 
 var src = require(pathval)
 
-function runtest(inval){
-    return src.funcname(inval)
-}
+function runtest(){
+    return [expectval, src.funcname(inval)]
+};
+module.exports = runtest

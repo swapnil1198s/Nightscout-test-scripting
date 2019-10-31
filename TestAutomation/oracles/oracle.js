@@ -1,10 +1,14 @@
 'use strict'
 
-var tst = require("../testCasesExecutables/test.js")
+import { runtest } from "./testCasesExecutables/test.js"
 
-var res = tst.runtest()
+console.log('here1')
+
+var res = runtest()
 var expectval = res[0]
 var returnval = res[1]
+
+console.log('here2')
 
 if (expectval === returnval){
     // return 'Pass'
