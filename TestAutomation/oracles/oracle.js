@@ -1,21 +1,20 @@
 'use strict'
 
-var src = require("../testCasesExecutables/test.js")
+var tst = require("../testCasesExecutables/test.js")
 
-function oracle(inval, expectval) {
-    expectval = src.runtest(inval)
-    if (expectval === outval){
-        // return 'Pass'
-        console.log('Pass')
-    }
-    else if (isNaN(expectval) && isNaN(outval)){
-        // return 'Pass'
-        console.log('Pass')
-    }
-    else{
-        // return 'Fail'
-        console.log('Fail')
-    }
+var res = tst.runtest()
+var expectval = res[0]
+var returnval = res[1]
+
+if (expectval === returnval){
+    // return 'Pass'
+    console.log('Pass')
 }
-
-module.exports = oracle
+else if (isNaN(expectval) && isNaN(outval)){
+    // return 'Pass'
+    console.log('Pass')
+}
+else{
+    // return 'Fail'
+    console.log('Fail')
+}

@@ -57,13 +57,12 @@ with open(filename, "w") as htmlfile:
     for infilepath in sorted(os.listdir(casepath)):
         print('generate test: ', infilepath, outpath)
 
-        # exeGen(os.path.join(casepath, infilepath), outfilepath, exectemplatepath)
-        # test(os.path.join(casepath, infilepath),outfilepath)
-        # minigen(os.path.join(casepath, infilepath),outfilepath)
         oracle_exegen(os.path.join(casepath, infilepath),outfilepath)
 
         print('executing')
-        proc = subprocess.Popen('npm run oracle 2>&1', shell=True,stdout=subprocess.PIPE)
+        # proc = subprocess.Popen('npm run oracle 2>&1', shell=True,stdout=subprocess.PIPE)
+
+        os.system('npm run oracle')
 
         lines = proc.stdout.readlines()
         resval = lines[-1].decode('utf-8')
