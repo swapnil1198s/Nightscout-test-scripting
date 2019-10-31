@@ -2,24 +2,14 @@
 
 var tst = require("../testCasesExecutables/test")
 
-var res = new Array(tst.runtest())
-
-console.log(res)
-
-var expectval = res[0]
-var returnval = res[1]
-
-console.log('here2')
+var [expectval, returnval] = tst()
 
 if (expectval === returnval){
-    // return 'Pass'
     console.log('Pass')
 }
-else if (isNaN(expectval) && isNaN(outval)){
-    // return 'Pass'
+else if (isNaN(expectval) && isNaN(returnval)){
     console.log('Pass')
 }
 else{
-    // return 'Fail'
     console.log('Fail')
 }
