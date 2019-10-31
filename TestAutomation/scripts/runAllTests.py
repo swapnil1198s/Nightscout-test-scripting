@@ -6,6 +6,8 @@ from exegen import exeGen
 from writeTest import test
 from minigen import minigen
 from reportgen import reportline
+from oracle_exegen import oracle_exegen
+
 oraclepath = os.path.abspath(os.path.join('.', 'oracles', 'oracle.py'))
 spec = importlib.util.spec_from_file_location("oracle.oracle", oraclepath)
 mod = importlib.util.module_from_spec(spec)
@@ -20,10 +22,10 @@ spec.loader.exec_module(mod)
 def reportHeader():
     header = ''
     header += '''
-    <table border="2" width="100%"> 
+    <table border="2" width="100%">
         <tr align="center">
             <th colspan="9">Testing Report</th>
-        <tr> 
+        <tr>
             <th> Test # </th>
             <th> Pass/Fail </th>
             <th> Test ID </th>
@@ -47,34 +49,37 @@ with open(filename, "w") as htmlfile:
     <html lang="en-US" style="height: 100%;">\n
     <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Testing Report</title>\n''')
-    
+
     htmlfile.write(reportHeader())
     lineCount = 0
     # set maxTableSize to -1 for no limit
     maxTableSize = -1
     for infilepath in sorted(os.listdir(casepath)):
         print('generate test: ', infilepath, outpath)
-        
+
         # exeGen(os.path.join(casepath, infilepath), outfilepath, exectemplatepath)
         # test(os.path.join(casepath, infilepath),outfilepath)
-        minigen(os.path.join(casepath, infilepath),outfilepath)
+        # minigen(os.path.join(casepath, infilepath),outfilepath)
+        oracle_exegen(os.path.join(casepath, infilepath),outfilepath)
 
         print('executing')
-        proc = subprocess.Popen('npm start 2>&1', shell=True,stdout=subprocess.PIPE)
+        proc = subprocess.Popen('npm run oracle 2>&1', shell=True,stdout=subprocess.PIPE)
 
         lines = proc.stdout.readlines()
         resval = lines[-1].decode('utf-8')
 
+        print('results:', resval)
+        print(lines)
 
         casefile = open(os.path.join(casepath, infilepath),"r")
         lines = casefile.readlines()
         casefile.close()
 
-        expectval = lines[-1].split(':')[-1]      
+        expectval = lines[-1].split(':')[-1]
         reportLine='\t\t<tr>\n\t\t\t<td>'+str(lineCount+1)+'</td>\n\t\t\t<td>'
         if (lineCount % maxTableSize == 0 and lineCount != 0 and maxTableSize != -1):
             reportLine='\t</table>\n\t\t<br>'+reportHeader()+reportLine
-  
+
         if (mod.oracle(expectval, resval) == "Pass"):
             reportLine += 'Pass &#x2705</td>\n'
         elif (mod.oracle(expectval, resval) == "Fail"):
@@ -88,7 +93,7 @@ with open(filename, "w") as htmlfile:
             elementsList = input.split(':')
             element = elementsList[1].strip()
             reportLine += '\t\t\t<td>' + element + '</td>\n'
-        
+
         reportLine += '\t\t\t<td>' + resval.strip() + '</td>\n'
         reportLine += '\t\t</tr>\n'
         htmlfile.write(reportLine)
