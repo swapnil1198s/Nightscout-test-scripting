@@ -1,7 +1,5 @@
-# 2-2
+# 2-2 Javascript Unit Testing Framework Project
 
-Nighscout Project Testing Repository
-
-Jack, Jesse, Swapnil
+Jack Fraser, Jesse Deacon, Swapnil Srivastava
 
 How to run project readme is located within TestAutomation/docs

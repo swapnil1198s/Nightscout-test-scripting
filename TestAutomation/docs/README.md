@@ -1,8 +1,6 @@
-# 2-2
+# 2-2 Javascript Unit Testing Framework Project
 
-Nighscout Project Testing Repository
-
-Jack, Jesse, Swapnil
+Jack Fraser, Jesse Deacon, Swapnil Srivastava
 
 1. To run the tests, first install nodejs.
 
