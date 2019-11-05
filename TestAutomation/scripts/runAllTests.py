@@ -40,10 +40,10 @@ with open(report, "w") as htmlfile:
     # set maxTableSize to -1 for no limit
     maxTableSize = -1
     for testcase in sorted(os.listdir(testcases)):
-        print('generate test', testcase)
+        print('\ntesting', testcase)
         oracle_exegen(os.path.join(testcases, testcase),testcaseexecutable)
 
-        print('executing')
+        print('executing test')
         proc = subprocess.Popen('npm run oracle 2>&1', shell=True,stdout=subprocess.PIPE)
 
         lines = proc.stdout.readlines()
@@ -79,9 +79,10 @@ with open(report, "w") as htmlfile:
         reportLine += '\t\t</tr>\n'
         htmlfile.write(reportLine)
         lineCount += 1
-        print('test', lineCount, 'done')
+        print(testcase, 'complete')
+
     htmlfile.write('\t\t</table>\n\t</head>')
-    print("all tests done")
+    print("\nall tests done")
 
 print('opening report')
 try: subprocess.call(['xdg-open', report])
