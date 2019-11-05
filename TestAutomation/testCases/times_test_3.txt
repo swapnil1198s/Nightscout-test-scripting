@@ -1,0 +1,7 @@
+Test ID:times_test_3
+Requirements being tested:times should convert 3 seconds to milliseconds
+Component being tested:times.js
+Method being tested:secs
+Input:3
+Expected output:3000
+*args:.msecs

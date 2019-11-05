@@ -4,3 +4,4 @@ Component(filename):%
 Method(functionName):%
 Input:%
 Output:%
+(optional) *args:%

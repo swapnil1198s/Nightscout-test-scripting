@@ -1,0 +1,7 @@
+Test ID:times_test_2
+Requirements being tested:times should convert 1 week to hours
+Component being tested:times.js
+Method being tested:week
+Input:
+Expected output:604800
+*args:.secs

@@ -10,7 +10,7 @@ def reportHeader():
     header = '''
     <table border="2" width="100%">
         <tr align="center">
-            <th colspan="9">Testing Report</th>
+            <th colspan="10">Testing Report</th>
         <tr>
             <th> Test # </th>
             <th> Pass/Fail </th>
@@ -20,6 +20,7 @@ def reportHeader():
             <th> Method </th>
             <th> Input </th>
             <th> Expected Output </th>
+            <th> *args </th>
             <th> Actual Output </th>
         </tr>\n'''
     return header
@@ -70,6 +71,7 @@ with open(report, "w") as htmlfile:
         else:
             reportLine += 'Error</td>\n'
 
+        if len(lines) < 7: lines.append(': ')
         for input in lines:
             elementsList = input.split(':')
             element = elementsList[1].strip()

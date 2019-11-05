@@ -10,6 +10,9 @@ def oracle_exegen(inFile, outFile):
     testInput = fileText[4].split(":")[1]
     testOracle = fileText[5].split(":")[1]
 
+    try:resArg = str(fileText[6].split(":")[1].strip("\n").strip())
+    except: resArg = None
+
     testID = testName
     descr = testReq.strip("\n").strip()
     component = testFile.strip("\n").strip()
@@ -22,7 +25,7 @@ def oracle_exegen(inFile, outFile):
         function runtest(){
             res = [
                 '''+expectedOutput +''',
-                src.'''+methodName +'('+inputReceived +''')
+                src.'''+methodName +'('+inputReceived +''')'''+(resArg if resArg is not None else '')+'''
             ];
             console.log(res[0])
             console.log(res[1])
