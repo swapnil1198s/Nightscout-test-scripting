@@ -30,7 +30,7 @@ def oracle_exegen(inFile, outFile):
         }
         module.exports = runtest;'''
 
-    print("Done")
+    print('oracle_exe generated')
 
     outF = open(outFile, "w")
     outF.write(output)
