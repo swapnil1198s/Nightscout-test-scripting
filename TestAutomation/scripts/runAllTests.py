@@ -6,11 +6,11 @@ from oracle_exegen import oracle_exegen
 # TO RUN THIS SCRIPT, CD TO 'TestAutomation',
 # then execute the command 'python3 scripts/runAllTests.py
 
-def reportHeader():
+def reportHeader(funcname=None):
     header = '''
     <table border="2" width="100%">
         <tr align="center">
-            <th colspan="10">Testing Report</th>
+            <th colspan="10"> Testing: '''+(funcname if funcname is not None else 'Testing')+'''</th>
         <tr>
             <th> Test # </th>
             <th> Pass/Fail </th>
@@ -34,9 +34,9 @@ with open(report, "w") as htmlfile:
     <html lang="en-US" style="height: 100%;">\n
     <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Testing Report</title>\n''')
-
-    htmlfile.write(reportHeader())
     lineCount = 0
+
+    prevtest = None
 
     # set maxTableSize to -1 for no limit
     maxTableSize = -1
@@ -61,8 +61,12 @@ with open(report, "w") as htmlfile:
 
         print('writing to report')
         reportLine='\t\t<tr>\n\t\t\t<td>'+str(lineCount+1)+'</td>\n\t\t\t<td>'
-        if (lineCount % maxTableSize == 0 and lineCount != 0 and maxTableSize != -1):
-            reportLine='\t</table>\n\t\t<br>'+reportHeader()+reportLine
+
+        if prevtest is None:
+            htmlfile.write(reportHeader(testcase.split('_')[0]))
+        elif prevtest != ''.join(i for i in testcase if not i.isdigit()):
+            reportLine='\t</table>\n\t\t<br>'+reportHeader(testcase.split('_')[0])+reportLine
+        prevtest = ''.join(i for i in testcase if not i.isdigit())
 
         if resval == "Pass":
             reportLine += 'Pass &#x2705</td>\n'

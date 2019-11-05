@@ -1,5 +1,5 @@
 Test ID:times_test_2
-Requirements being tested:times should convert 1 week to hours
+Requirements being tested:week to hours, default to 1
 Component being tested:times.js
 Method being tested:week
 Input:

@@ -1,5 +1,5 @@
 Test ID:times_test_1
-Requirements being tested:times should convert 1 week to hours
+Requirements being tested:2 weeks to correct number of minutes
 Component being tested:times.js
 Method being tested:weeks
 Input:2
