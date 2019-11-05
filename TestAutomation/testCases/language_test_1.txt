@@ -1,0 +1,6 @@
+Test ID:language_test_1
+Requirements being tested:translate english phrase to french
+Component being tested:language.js
+Method being tested:translate
+Input:'Color', 'fr'
+Expected output:'Couleur'

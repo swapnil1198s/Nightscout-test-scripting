@@ -25,7 +25,7 @@ def oracle_exegen(inFile, outFile):
         function runtest(){
             res = [
                 '''+expectedOutput +''',
-                src.'''+methodName +'('+inputReceived +''')'''+(resArg if resArg is not None else '')+'''
+                src'''+('.'+methodName if methodName != '' else '') +'('+inputReceived +''')'''+(resArg if resArg is not None else '')+'''
             ];
             console.log(res[0])
             console.log(res[1])
