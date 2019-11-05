@@ -15,8 +15,6 @@ function configure() {
   };
 }
 
-// new line
-
 // original export
 // module.exports = configure;
 
