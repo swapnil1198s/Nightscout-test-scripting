@@ -1,5 +1,9 @@
 # 2-2
 
+Nighscout Project Testing Repository
+
+Jack, Jesse, Swapnil
+
 1. To run the tests, first install nodejs.
 
 This can be done with by following the instuctions here:
