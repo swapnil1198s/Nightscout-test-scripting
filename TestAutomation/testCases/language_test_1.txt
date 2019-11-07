@@ -4,4 +4,4 @@ Component being tested:language.js
 Method being tested:
 Input:
 Expected output:'en'
-*args:
+*args:.lang
