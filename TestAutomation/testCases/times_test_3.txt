@@ -1,7 +1,7 @@
 Test ID:times_test_3
-Requirements being tested:seconds to milliseconds
+Requirements being tested:3 seconds to milliseconds
 Component being tested:times.js
 Method being tested:secs
 Input:3
+Objcall:msecs
 Expected output:3000
-*args:.msecs

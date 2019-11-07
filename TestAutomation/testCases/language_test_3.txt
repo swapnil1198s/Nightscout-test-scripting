@@ -3,5 +3,5 @@ Requirements being tested:check languages initialized correctly
 Component being tested:language.js
 Method being tested:
 Input:
+Objcall:languages[0].code
 Expected output:'bg'
-*args:.languages[0].code

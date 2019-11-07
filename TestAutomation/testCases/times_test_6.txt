@@ -3,5 +3,5 @@ Requirements being tested:hours to mins w/float input
 Component being tested:times.js
 Method being tested:hours
 Input:1.5
+Objcall:mins
 Expected output:90
-*args:.mins

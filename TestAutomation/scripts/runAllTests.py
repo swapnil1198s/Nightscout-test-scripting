@@ -19,8 +19,8 @@ def reportHeader(funcname=None):
             <th> Component </th>
             <th> Method </th>
             <th> Input </th>
-            <th> Expected Output </th>
             <th> *args </th>
+            <th> Expected Output </th>
             <th> Actual Output </th>
         </tr>\n'''
     return header
@@ -42,27 +42,48 @@ with open(report, "w") as htmlfile:
     maxTableSize = -1
     for testcase in sorted(os.listdir(testcases)):
         print('\ntesting', testcase)
-        oracle_exegen(os.path.join(testcases, testcase),testcaseexecutable)
+        inF = open(os.path.join(testcases, testcase))
+        fileText = inF.readlines()
+        inF.close()
 
-        print('executing test')
+        if len(fileText) < 7:
+            fileText.insert(5, " :")
+
+        testName = fileText[0].split(":")[1].strip("\n").strip()
+        testReq = fileText[1].split(":")[1].strip("\n").strip()
+        testFile = fileText[2].split(":")[1].strip("\n").strip()
+        testMethod = fileText[3].split(":")[1].strip("\n").strip()
+        testInput = fileText[4].split(":")[1].strip("\n").strip()
+        testObjcall = fileText[5].split(":")[1].strip("\n").strip()
+        testOracle = fileText[6].split(":")[1].strip("\n").strip()
+
+        # print('  testname:\t', testName)
+        # print('  testreq:\t', testReq)
+        # print('  testfile:\t', testFile)
+        # print('  testMethod:\t', testMethod)
+        # print('  testinput:\t', testInput)
+        # print('  objcall:\t', testObjcall)
+        print('  oracle:\t', testOracle)
+
+        print('  generating test')
+        oracle_exegen(testFile, testMethod, testInput, testObjcall, testOracle, testcaseexecutable)
+
+        print('  executing test')
         proc = subprocess.Popen('npm run oracle 2>&1', shell=True,stdout=subprocess.PIPE)
 
         lines = proc.stdout.readlines()
         expectval = lines[-3].decode('utf-8').strip('\n').strip('\r').strip()
         returnval = lines[-2].decode('utf-8').strip('\n').strip('\r').strip()
         resval = lines[-1].decode('utf-8').strip('\n').strip('\r')
-        print('results:', resval)
-        print('expectval:', expectval)
-        print('returnval:', returnval)
-
-        print("lines")
-        print(lines)
+        print('  expectval:\t', expectval)
+        print('  returnval:\t', returnval)
+        print('  results:\t', resval)
 
         casefile = open(os.path.join(testcases, testcase),"r")
         lines = casefile.readlines()
         casefile.close()
 
-        print('writing to report')
+        print('  writing to report')
         reportLine='\t\t<tr>\n\t\t\t<td>'+str(lineCount+1)+'</td>\n\t\t\t<td>'
 
         if prevtest is None:
@@ -78,18 +99,14 @@ with open(report, "w") as htmlfile:
         else:
             reportLine += 'Error</td>\n'
 
-        if len(lines) < 7: lines.append(': ')
-        for input in lines:
-            elementsList = input.split(':')
-            element = elementsList[1].strip()
-            reportLine += '\t\t\t<td>' + element + '</td>\n'
+        lines = [testName, testReq, testFile, testMethod, testInput, testObjcall, testOracle]
+        for line in lines:
+            reportLine += '\t\t\t<td>' + line + '</td>\n'
 
         reportLine += '\t\t\t<td>' + returnval.strip() + '</td>\n'
         reportLine += '\t\t</tr>\n'
         htmlfile.write(reportLine)
         lineCount += 1
-        print(testcase, 'complete')
-
     htmlfile.write('\t\t</table>\n\t</head>')
     print("\nall tests done")
 

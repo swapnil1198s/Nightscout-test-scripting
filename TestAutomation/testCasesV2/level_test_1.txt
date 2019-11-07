@@ -1,5 +1,5 @@
 Test ID:level_test_1
-Requirements being tested:check level of 'WARN'
+Requirements being tested:see if level 1 is alarm
 Component being tested:levels.js
 Method being tested:
 Input:

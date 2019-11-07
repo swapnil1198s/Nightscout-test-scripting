@@ -2,20 +2,46 @@ TestID:%
 Requirement:%
 Component(filename):%
 Method(functionName):%
-Input:%
-Output:%
-ObjType:%
+Parameters(_ if function w/no parameters):%
+Object Call(Optional Line):%
+Expected Output:%
 
-ObjType represents the style of function being tested.
+example 1: FUNCTION RETURNS VALUE:
+    component:units.js
+    funccall:mmolToMgdl
+    params:"3"
+    Object:
+    Output:37
 
-If ObjType is 0 (or None), it is a function. This is like 'units.js' with the modified export.
-The call looks like:
-    functionName(input)
+exe:
+    units.mmolToMgdl("3") == 54
 
-If ObjType is 1, it is a function returning an object. This is like 'languages.js', 'times.js'.
-The call looks like:
-    functionName().input
+example 2a: MAIN FUNCTION RETURNS OBJECT:
+    component:language.js
+    funccall:
+    params:_
+    object:lang
+    output:'en'
 
-If ObjType is 2, it is a pure object. This is like 'levels.js'.
-The call looks like:
-    functionName.input
+exe:
+    language().lang == 'en'
+
+example 2b: SUBFUNCTION RETURNS OBJECT:
+    component:times.js
+    funccall:week
+    params:_
+    object:mins
+    output:10080
+
+exe:
+    times.week().mins == 10080
+
+example 3: OBJECT ONLY:
+    component:levels.js
+    funccall:
+    params:
+    objcall:WARN
+    output:1
+
+exe:
+    levels.WARN == 1

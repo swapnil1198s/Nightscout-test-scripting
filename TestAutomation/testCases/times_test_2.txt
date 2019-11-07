@@ -1,7 +1,7 @@
 Test ID:times_test_2
-Requirements being tested:week to hours, default to 1
+Requirements being tested:default week to correct number of minutes
 Component being tested:times.js
 Method being tested:week
-Input:
-Expected output:604800
-*args:.secs
+Input:_
+Objcall:mins
+Expected output:10080
