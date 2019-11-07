@@ -1,7 +1,7 @@
 Test ID:language_test_4
 Requirements being tested:translate Clock to French
 Component being tested:language.js
-Method being tested:set
-Input:'fr'
-Objcall:translate('Clock')
+Method being tested:
+Input:_
+Objcall:set('fr').translate('Clock')
 Expected output:"L'horloge"

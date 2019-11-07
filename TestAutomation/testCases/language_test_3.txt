@@ -2,6 +2,6 @@ Test ID:language_test_3
 Requirements being tested:check languages initialized correctly
 Component being tested:language.js
 Method being tested:
-Input:
+Input:_
 Objcall:languages[0].code
 Expected output:'bg'
