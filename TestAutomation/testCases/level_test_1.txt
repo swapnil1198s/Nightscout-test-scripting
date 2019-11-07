@@ -2,6 +2,6 @@ Test ID:level_test_1
 Requirements being tested:see if level 1 is alarm
 Component being tested:levels.js
 Method being tested:
-Input:
+Input:level
 Expected output:1
-*args:.toDisplay
+Isobject:1

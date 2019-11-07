@@ -4,4 +4,18 @@ Component(filename):%
 Method(functionName):%
 Input:%
 Output:%
-(optional) *args:%
+ObjType:%
+
+ObjType represents the style of function being tested.
+
+If ObjType is 0 (or None), it is a function. This is like 'units.js' with the modified export.
+The call looks like:
+    functionName(input)
+
+If ObjType is 1, it is a function returning an object. This is like 'languages.js', 'times.js'.
+The call looks like:
+    functionName().input
+
+If ObjType is 2, it is a pure object. This is like 'levels.js'.
+The call looks like:
+    functionName.input
