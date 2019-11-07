@@ -55,6 +55,9 @@ with open(report, "w") as htmlfile:
         print('expectval:', expectval)
         print('returnval:', returnval)
 
+        print("lines")
+        print(lines)
+
         casefile = open(os.path.join(testcases, testcase),"r")
         lines = casefile.readlines()
         casefile.close()

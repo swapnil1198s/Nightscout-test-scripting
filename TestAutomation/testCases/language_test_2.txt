@@ -1,0 +1,7 @@
+Test ID:language_test_2
+Requirements being tested:change language
+Component being tested:language.js
+Method being tested:
+Input:
+Expected output:'fr'
+*args:.set('fr').lang

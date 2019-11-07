@@ -1,0 +1,7 @@
+Test ID:language_test_4
+Requirements being tested:translate Clock to French
+Component being tested:language.js
+Method being tested:
+Input:
+Expected output:"L'horloge"
+*args:.set('fr').translate('Clock')

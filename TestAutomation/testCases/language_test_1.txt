@@ -1,6 +1,7 @@
 Test ID:language_test_1
-Requirements being tested:translate english phrase to french
+Requirements being tested:check default language
 Component being tested:language.js
-Method being tested:translate
-Input:'Color', 'fr'
-Expected output:'Couleur'
+Method being tested:
+Input:
+Expected output:'en'
+*args:
