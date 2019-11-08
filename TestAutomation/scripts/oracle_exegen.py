@@ -1,13 +1,10 @@
-def oracle_exegen(testFile, testMethod, testInput, testObjcall, testOracle, outFile):
-
+def oracle_exegen(testFile, testOracle, outFile, subFuncs):
     output = (
-        '''var src = require("../project/src/'''+testFile+'''")
+        '''var src = require("../project/src/''' +testFile +'''")
         function runtest(){
             res = [
-                '''+testOracle +''',
-                src'''+('.'+testMethod if testMethod != '' else '')\
-                +('('+(testInput if testInput != '_' else '') +')' if testInput != '' else '')\
-                +('.'+testObjcall if testObjcall != '' else '') +'''
+                '''+ testOracle +''',
+                src''' +subFuncs +'''
             ]
             return(res)
         }

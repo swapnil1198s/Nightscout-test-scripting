@@ -46,27 +46,35 @@ with open(report, "w") as htmlfile:
         fileText = inF.readlines()
         inF.close()
 
-        if len(fileText) < 7:
-            fileText.insert(5, " :")
-
         testName = fileText[0].split(":")[1].strip("\n").strip()
         testReq = fileText[1].split(":")[1].strip("\n").strip()
         testFile = fileText[2].split(":")[1].strip("\n").strip()
-        testMethod = fileText[3].split(":")[1].strip("\n").strip()
-        testInput = fileText[4].split(":")[1].strip("\n").strip()
-        testObjcall = fileText[5].split(":")[1].strip("\n").strip()
-        testOracle = fileText[6].split(":")[1].strip("\n").strip()
+        testOracle = fileText[3].split(":")[1].strip("\n").strip()
+
+        functions = []
+        params = []
+        subFuncs = ''
+
+        if len(fileText)>4:
+            rest = fileText[4:]
+
+            for entry in rest:
+                if ':' in entry:
+                    line = entry.strip("\n").strip().split(":")
+
+                    if 'call' in line[0].lower():
+                        subFuncs.append(line[1])
+                    elif 'param' in line[0].lower():
+                        subFuncs.append('('+line[1]+')')
+                    else: print('invalid line', line)
 
         # print('  testname:\t', testName)
         # print('  testreq:\t', testReq)
         # print('  testfile:\t', testFile)
-        # print('  testMethod:\t', testMethod)
-        # print('  testinput:\t', testInput)
-        # print('  objcall:\t', testObjcall)
-        print('  oracle:\t', testOracle)
+        # print('  oracle:\t', testOracle)
 
         print('  generating test')
-        oracle_exegen(testFile, testMethod, testInput, testObjcall, testOracle, testcaseexecutable)
+        oracle_exegen(testFile, testOracle, testcaseexecutable, rest)
 
         print('  executing test')
         proc = subprocess.Popen('npm run oracle 2>&1', shell=True,stdout=subprocess.PIPE)

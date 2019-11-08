@@ -45,3 +45,14 @@ example 3: OBJECT ONLY:
 
 exe:
     levels.WARN == 1
+
+Future design premise:
+    component: levels
+    call: f1
+    param: 2
+    call: f2
+    call: f3
+    param:
+
+exe:
+    levels.f1(2).f2.f3()
