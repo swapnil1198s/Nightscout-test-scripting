@@ -1,7 +1,7 @@
 Test ID:times_test_5
 Requirements being tested:default hour to mins
 Component being tested:times.js
-Method being tested:hour
-Input:_
-Objcall:mins
 Expected output:60
+call:hour
+param:
+call:mins

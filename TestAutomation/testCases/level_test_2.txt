@@ -1,7 +1,5 @@
 Test ID:level_test_1
 Requirements being tested:check default level
 Component being tested:levels.js
-Method being tested:
-Input:
-Objcall:level
 Expected output:1
+call:level

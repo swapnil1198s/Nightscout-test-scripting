@@ -1,7 +1,8 @@
 Test ID:language_test_2
 Requirements being tested:change language
 Component being tested:language.js
-Method being tested:
-Input:_
-Objcall:set('fr').lang
 Expected output:'fr'
+param:
+call:set
+param:'fr'
+call:lang
