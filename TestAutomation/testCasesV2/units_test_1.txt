@@ -1,6 +1,6 @@
 Test ID:unit_test_1
 Requirements being tested:mmolToMgdl should throw TypeError when given invalid input
 Component being tested:units.js
-Expected Output:NaN
-Function:mmolToMgdl
-Value:"a"
+Method being tested:mmolToMgdl
+Input:"3"
+Expected Output:54

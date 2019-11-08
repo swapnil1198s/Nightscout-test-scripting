@@ -1,0 +1,6 @@
+Test ID:level_test_3
+Requirements being tested:change level and check
+Component being tested:levels.js
+Expected output:'undefined'
+call:WARN
+call:level

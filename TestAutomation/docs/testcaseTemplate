@@ -1,7 +1,53 @@
 TestID:%
 Requirement:%
 Component(filename):%
-Method(functionName):%
-Input:%
-Output:%
-(optional) *args:%
+Expected Output:%
+(optional *)call:
+(optional *)param:
+
+example 1: FUNCTION RETURNS VALUE:
+    component:units.js
+    Output:37
+    funccall:mmolToMgdl
+    param:"3"
+
+exe:
+    units.mmolToMgdl("3") == 54
+
+example 2a: MAIN FUNCTION RETURNS OBJECT:
+    component:language.js
+    output:'en'
+    param:
+    call:lang
+
+exe:
+    language().lang == 'en'
+
+example 2b: SUBFUNCTION RETURNS OBJECT:
+    component:times.js
+    output:10080
+    call:week
+    param:
+    call:mins
+
+exe:
+    times.week().mins == 10080
+
+example 3: OBJECT ONLY:
+    component:levels.js
+    output:1
+    call:WARN
+
+exe:
+    levels.WARN == 1
+
+example 4: HYPOTHETICAL:
+    component: levels
+    call: f1
+    param: 2
+    call: f2
+    call: f3
+    param:
+
+exe:
+    levels.f1(2).f2.f3()

@@ -4,10 +4,13 @@ var tst = require("../testCasesExecutables/test")
 
 var [expectval, returnval] = tst()
 
-if (expectval === returnval){
+console.log(expectval)
+console.log(returnval)
+
+if (expectval == returnval){
     console.log('Pass')
 }
-else if (isNaN(expectval) && isNaN(returnval)){
+else if (Number.isNaN(expectval) && Number.isNaN(returnval)){
     console.log('Pass')
 }
 else{

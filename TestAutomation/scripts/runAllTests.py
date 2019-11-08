@@ -10,17 +10,15 @@ def reportHeader(funcname=None):
     header = '''
     <table border="2" width="100%">
         <tr align="center">
-            <th colspan="10"> Testing: '''+(funcname if funcname is not None else 'Testing')+'''</th>
+            <th colspan="8"> Testing: '''+(funcname if funcname is not None else 'Testing')+'''</th>
         <tr>
             <th> Test # </th>
             <th> Pass/Fail </th>
             <th> Test ID </th>
             <th> Requirements Being Tested </th>
             <th> Component </th>
-            <th> Method </th>
-            <th> Input </th>
+            <th> Functions </th>
             <th> Expected Output </th>
-            <th> *args </th>
             <th> Actual Output </th>
         </tr>\n'''
     return header
@@ -42,24 +40,57 @@ with open(report, "w") as htmlfile:
     maxTableSize = -1
     for testcase in sorted(os.listdir(testcases)):
         print('\ntesting', testcase)
-        oracle_exegen(os.path.join(testcases, testcase),testcaseexecutable)
+        inF = open(os.path.join(testcases, testcase))
+        fileText = inF.readlines()
+        inF.close()
 
-        print('executing test')
+        testName = fileText[0].split(":")[1].strip("\n").strip()
+        testReq = fileText[1].split(":")[1].strip("\n").strip()
+        testFile = fileText[2].split(":")[1].strip("\n").strip()
+        testOracle = fileText[3].split(":")[1].strip("\n").strip()
+
+        functions = []
+        params = []
+        subFuncs = ''
+
+        if len(fileText)>4:
+            rest = fileText[4:]
+
+            for entry in rest:
+                if ':' in entry:
+                    line = entry.strip("\n").strip().split(":")
+
+                    if 'call' in line[0].lower():
+                        subFuncs += '.'+line[1]
+                    elif 'param' in line[0].lower():
+                        subFuncs += '('+line[1]+')'
+                    else: print('  test case error:\tinvalid line', line)
+
+        print('  testname:\t\t', testName)
+        print('  testreq:\t\t', testReq)
+        print('  testfile:\t\t', testFile)
+        print('  functions:\t\t', subFuncs)
+        print('  oracle:\t\t', testOracle.strip('\'').strip('\"'))
+
+        # print('  generating test')
+        oracle_exegen(testFile, testOracle, testcaseexecutable, subFuncs)
+
+        # print('  executing test')
         proc = subprocess.Popen('npm run oracle 2>&1', shell=True,stdout=subprocess.PIPE)
 
         lines = proc.stdout.readlines()
         expectval = lines[-3].decode('utf-8').strip('\n').strip('\r').strip()
         returnval = lines[-2].decode('utf-8').strip('\n').strip('\r').strip()
         resval = lines[-1].decode('utf-8').strip('\n').strip('\r')
-        print('results:', resval)
-        print('expectval:', expectval)
-        print('returnval:', returnval)
+        print('  expectval:\t\t', expectval)
+        print('  returnval:\t\t', returnval)
+        print('  results:\t\t', resval)
 
         casefile = open(os.path.join(testcases, testcase),"r")
         lines = casefile.readlines()
         casefile.close()
 
-        print('writing to report')
+        print('  writing to report')
         reportLine='\t\t<tr>\n\t\t\t<td>'+str(lineCount+1)+'</td>\n\t\t\t<td>'
 
         if prevtest is None:
@@ -75,18 +106,14 @@ with open(report, "w") as htmlfile:
         else:
             reportLine += 'Error</td>\n'
 
-        if len(lines) < 7: lines.append(': ')
-        for input in lines:
-            elementsList = input.split(':')
-            element = elementsList[1].strip()
-            reportLine += '\t\t\t<td>' + element + '</td>\n'
+        lines = [testName, testReq, testFile, subFuncs, testOracle.strip('\'').strip('\"')]
+        for line in lines:
+            reportLine += '\t\t\t<td>' + line + '</td>\n'
 
         reportLine += '\t\t\t<td>' + returnval.strip() + '</td>\n'
         reportLine += '\t\t</tr>\n'
         htmlfile.write(reportLine)
         lineCount += 1
-        print(testcase, 'complete')
-
     htmlfile.write('\t\t</table>\n\t</head>')
     print("\nall tests done")
 

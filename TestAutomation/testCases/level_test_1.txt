@@ -1,0 +1,5 @@
+Test ID:level_test_1
+Requirements being tested:check level of 'WARN'
+Component being tested:levels.js
+Expected output:1
+call:WARN

@@ -1,0 +1,7 @@
+Test ID:language_test_3
+Requirements being tested:check languages initialized correctly
+Component being tested:language.js
+Expected output:'bg'
+param:
+call:languages[0]
+call:code
