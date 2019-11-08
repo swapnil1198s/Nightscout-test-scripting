@@ -1,52 +1,47 @@
 TestID:%
 Requirement:%
 Component(filename):%
-Method(functionName):%
-Parameters(_ if function w/no parameters):%
-Object Call(Optional Line):%
 Expected Output:%
+(optional *)call:
+(optional *)param:
 
 example 1: FUNCTION RETURNS VALUE:
     component:units.js
-    funccall:mmolToMgdl
-    params:"3"
-    Object:
     Output:37
+    funccall:mmolToMgdl
+    param:"3"
 
 exe:
     units.mmolToMgdl("3") == 54
 
 example 2a: MAIN FUNCTION RETURNS OBJECT:
     component:language.js
-    funccall:
-    params:_
-    object:lang
     output:'en'
+    param:
+    call:lang
 
 exe:
     language().lang == 'en'
 
 example 2b: SUBFUNCTION RETURNS OBJECT:
     component:times.js
-    funccall:week
-    params:_
-    object:mins
     output:10080
+    call:week
+    param:
+    call:mins
 
 exe:
     times.week().mins == 10080
 
 example 3: OBJECT ONLY:
     component:levels.js
-    funccall:
-    params:
-    objcall:WARN
     output:1
+    call:WARN
 
 exe:
     levels.WARN == 1
 
-Future design premise:
+example 4: HYPOTHETICAL:
     component: levels
     call: f1
     param: 2
