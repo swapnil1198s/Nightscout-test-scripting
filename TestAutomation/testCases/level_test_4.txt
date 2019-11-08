@@ -1,0 +1,5 @@
+Test ID:level_test_4
+Requirements being tested:check default level
+Component being tested:levels.js
+Expected output:1
+call:level

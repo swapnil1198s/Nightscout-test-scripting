@@ -1,5 +1,6 @@
-Test ID:level_test_1
-Requirements being tested:check default level
+Test ID:level_test_2
+Requirements being tested:check if URGENT is alarm
 Component being tested:levels.js
-Expected output:1
-call:level
+Expected output:True
+call:toStatusClass
+param:1
