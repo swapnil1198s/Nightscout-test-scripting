@@ -10,16 +10,14 @@ def reportHeader(funcname=None):
     header = '''
     <table border="2" width="100%">
         <tr align="center">
-            <th colspan="10"> Testing: '''+(funcname if funcname is not None else 'Testing')+'''</th>
+            <th colspan="8"> Testing: '''+(funcname if funcname is not None else 'Testing')+'''</th>
         <tr>
             <th> Test # </th>
             <th> Pass/Fail </th>
             <th> Test ID </th>
             <th> Requirements Being Tested </th>
             <th> Component </th>
-            <th> Method </th>
-            <th> Input </th>
-            <th> *args </th>
+            <th> Functions </th>
             <th> Expected Output </th>
             <th> Actual Output </th>
         </tr>\n'''
@@ -63,20 +61,21 @@ with open(report, "w") as htmlfile:
                     line = entry.strip("\n").strip().split(":")
 
                     if 'call' in line[0].lower():
-                        subFuncs.append(line[1])
+                        subFuncs += '.'+line[1]
                     elif 'param' in line[0].lower():
-                        subFuncs.append('('+line[1]+')')
-                    else: print('invalid line', line)
+                        subFuncs += '('+line[1]+')'
+                    else: print('  test case error:\tinvalid line', line)
 
-        # print('  testname:\t', testName)
-        # print('  testreq:\t', testReq)
-        # print('  testfile:\t', testFile)
-        # print('  oracle:\t', testOracle)
+        print('  testname:\t\t', testName)
+        print('  testreq:\t\t', testReq)
+        print('  testfile:\t\t', testFile)
+        print('  functions:\t\t', subFuncs)
+        print('  oracle:\t\t', testOracle)
 
-        print('  generating test')
-        oracle_exegen(testFile, testOracle, testcaseexecutable, rest)
+        # print('  generating test')
+        oracle_exegen(testFile, testOracle, testcaseexecutable, subFuncs)
 
-        print('  executing test')
+        # print('  executing test')
         proc = subprocess.Popen('npm run oracle 2>&1', shell=True,stdout=subprocess.PIPE)
 
         lines = proc.stdout.readlines()
@@ -84,8 +83,8 @@ with open(report, "w") as htmlfile:
         returnval = lines[-2].decode('utf-8').strip('\n').strip('\r').strip()
         resval = lines[-1].decode('utf-8').strip('\n').strip('\r')
         print('  expectval:\t', expectval)
-        print('  returnval:\t', returnval)
-        print('  results:\t', resval)
+        print('  returnval:\t\t', returnval)
+        print('  results:\t\t', resval)
 
         casefile = open(os.path.join(testcases, testcase),"r")
         lines = casefile.readlines()
@@ -107,7 +106,7 @@ with open(report, "w") as htmlfile:
         else:
             reportLine += 'Error</td>\n'
 
-        lines = [testName, testReq, testFile, testMethod, testInput, testObjcall, testOracle]
+        lines = [testName, testReq, testFile, subFuncs, testOracle]
         for line in lines:
             reportLine += '\t\t\t<td>' + line + '</td>\n'
 
