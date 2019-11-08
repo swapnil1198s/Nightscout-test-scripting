@@ -70,7 +70,7 @@ with open(report, "w") as htmlfile:
         print('  testreq:\t\t', testReq)
         print('  testfile:\t\t', testFile)
         print('  functions:\t\t', subFuncs)
-        print('  oracle:\t\t', testOracle)
+        print('  oracle:\t\t', testOracle.strip('\'').strip('\"'))
 
         # print('  generating test')
         oracle_exegen(testFile, testOracle, testcaseexecutable, subFuncs)
@@ -82,7 +82,7 @@ with open(report, "w") as htmlfile:
         expectval = lines[-3].decode('utf-8').strip('\n').strip('\r').strip()
         returnval = lines[-2].decode('utf-8').strip('\n').strip('\r').strip()
         resval = lines[-1].decode('utf-8').strip('\n').strip('\r')
-        print('  expectval:\t', expectval)
+        print('  expectval:\t\t', expectval)
         print('  returnval:\t\t', returnval)
         print('  results:\t\t', resval)
 
@@ -106,7 +106,7 @@ with open(report, "w") as htmlfile:
         else:
             reportLine += 'Error</td>\n'
 
-        lines = [testName, testReq, testFile, subFuncs, testOracle]
+        lines = [testName, testReq, testFile, subFuncs, testOracle.strip('\'').strip('\"')]
         for line in lines:
             reportLine += '\t\t\t<td>' + line + '</td>\n'
 
