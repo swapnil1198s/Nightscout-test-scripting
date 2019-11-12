@@ -1,5 +1,5 @@
 Test ID:unit_test_2
-Requirements being tested:mmolToMgdl should correctly convert string input 1
+Requirements being tested:string inputs should be converted to numbers if possible, and convert correctly to Mgdl
 Component being tested:units.js
 Expected output:18
 call:mmolToMgdl

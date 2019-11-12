@@ -1,5 +1,5 @@
 Test ID:unit_test_9
-Requirements being tested:mgdlToMMOL should correctly convert integer input 135
+Requirements being tested:integer inputs should convert correctly to MMOL
 Component being tested:units.js
 Expected output:7.5
 call:mgdlToMMOL

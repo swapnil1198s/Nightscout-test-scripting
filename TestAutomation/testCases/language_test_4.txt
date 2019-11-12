@@ -1,5 +1,5 @@
 Test ID:language_test_4
-Requirements being tested:translate Clock to French
+Requirements being tested:the language object must be able to translate keywords to the target language
 Component being tested:language.js
 Expected output:"L'horloge"
 param:

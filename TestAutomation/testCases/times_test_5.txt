@@ -1,5 +1,5 @@
 Test ID:times_test_5
-Requirements being tested:default hour to mins
+Requirements being tested:a times default hour must initialize to 1 hour and correctly convert to minutes
 Component being tested:times.js
 Expected output:60
 call:hour

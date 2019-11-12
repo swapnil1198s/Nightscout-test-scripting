@@ -1,5 +1,5 @@
 Test ID:unit_test_5
-Requirements being tested:mmolToMgdl should correctly convert float input 1.145
+Requirements being tested:float inputs should round the result during conversion to Mgdl
 Component being tested:units.js
 Expected output:21
 call:mmolToMgdl

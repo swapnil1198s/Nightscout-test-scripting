@@ -1,5 +1,5 @@
 Test ID:language_test_3
-Requirements being tested:check languages initialized correctly
+Requirements being tested:language must contain a large array of available languages, including 'bg'
 Component being tested:language.js
 Expected output:'bg'
 param:

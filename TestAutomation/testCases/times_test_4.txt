@@ -1,5 +1,5 @@
 Test ID:times_test_4
-Requirements being tested:1 millisecond to milliseconds
+Requirements being tested:default times millisecond must correctly return a single millisecond
 Component being tested:times.js
 Expected output:1
 call:msec

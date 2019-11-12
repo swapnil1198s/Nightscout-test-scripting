@@ -1,5 +1,5 @@
 Test ID:times_test_1
-Requirements being tested:2 weeks to correct number of minutes
+Requirements being tested:times must be able to convert an integer number of weeks to minutes
 Component being tested:times.js
 Expected output:20160
 call:weeks
