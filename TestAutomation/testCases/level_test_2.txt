@@ -1,5 +1,6 @@
 Test ID:level_test_2
-Requirements being tested:check default level
+Requirements being tested:toDisplay() should only accept integers between -3 and 2
 Component being tested:levels.js
-Expected output:'undefined'
-call:level
+Expected output:'Urgent'
+call:toDisplay
+param:2
