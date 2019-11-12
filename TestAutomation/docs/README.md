@@ -11,6 +11,10 @@ This can be done with by following the instuctions here:
 
 3. Ensure that the file to be tested is a `javascript` file that is fully unit-testable, and that it is located in the `project/src` directory
 
+3b. Ensure that all node dependencies for your tested javascript file are installed correctly. In our example case, `levels.js` requires `language.js`, and `language.js` requires the js extension `lodash`
+
+3c. Therefore, for this test environment, ensure that lodash is installed with `npm i lodash`
+
 4. Ensure that test cases exist for the tested file, are located in `testCases/`, and that they have been written according to the [Test Case Template](https://github.com/csci-362-02-2019/2-2/blob/master/TestAutomation/docs/testcaseTemplate).
 
 3. cd into the TestAutomation subdirectory. The locations where you run the scripts from is important, and the assignment document states that they will be run from TestAutomation

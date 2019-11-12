@@ -5,6 +5,15 @@ Expected Output:%
 (optional *)call:
 (optional *)param:
 
+notes:
+    calls and params are optional and can be of any number and in any order
+    a function call does not require a param
+    'call' is the keyword for a function call line. It can be part of a string:
+        e.g. "Function to be called:"
+
+    'param' is the keyword for a value line. It can also be part of a string:
+        e.g. "Parameter to function:"
+
 example 1: FUNCTION RETURNS VALUE:
     component:units.js
     Output:37
