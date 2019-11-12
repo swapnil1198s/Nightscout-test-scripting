@@ -1,7 +1,0 @@
-Test ID:times_test_1
-Requirements being tested:default week to correct number of minutes
-Filename:times.js
-Function Call:week
-Function Parameters:_
-Object Call:mins
-Expected output:10080

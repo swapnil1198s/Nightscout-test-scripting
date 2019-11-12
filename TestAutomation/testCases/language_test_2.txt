@@ -2,7 +2,7 @@ Test ID:language_test_2
 Requirements being tested:change language
 Component being tested:language.js
 Expected output:'fr'
-param:
-call:set
-param:'fr'
-call:lang
+parameter to prev function:
+function to be called:set
+parameter to prev function:'fr'
+function to be called:lang
