@@ -1,7 +1,0 @@
-Test ID:language_test_1
-Requirements being tested:check default language
-Component being tested:language.js
-Method being tested:
-Input:_
-Objcall:lang
-Expected output:'en'
