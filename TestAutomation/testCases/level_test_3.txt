@@ -1,5 +1,5 @@
 Test ID:level_test_3
-Requirements being tested:toDisplay() should only accept integers between -3 and 2
+Requirements being tested:values not in the valid alert level range should return keyword 'Unknown'
 Component being tested:levels.js
 Expected output:'Unknown'
 call:toDisplay

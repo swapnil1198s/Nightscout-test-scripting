@@ -1,5 +1,5 @@
 Test ID:unit_test_10
-Requirements being tested:mgdlToMMOL should correctly convert float input 21.3
+Requirements being tested:float inputs should convert correctly to MMOL
 Component being tested:units.js
 Expected output:1.2
 call:mgdlToMMOL

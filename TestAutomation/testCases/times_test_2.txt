@@ -1,5 +1,5 @@
 Test ID:times_test_2
-Requirements being tested:default week to correct number of minutes
+Requirements being tested:a times week must default to 1 week, and map correctly to minutes
 Component being tested:times.js
 Expected output:10080
 call:week

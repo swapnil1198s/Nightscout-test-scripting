@@ -1,5 +1,5 @@
 Test ID:unit_test_6
-Requirements being tested:Conversion of mol to mcdl with a float argument
+Requirements being tested:Mgdl result rounding should occur after calculation, not before
 Component being tested:units.js
 Expected output:19
 call:mmolToMgdl

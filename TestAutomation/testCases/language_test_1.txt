@@ -1,5 +1,5 @@
 Test ID:language_test_1
-Requirements being tested:check default language
+Requirements being tested:the default language on initialization should be english
 Component being tested:language.js
 Expected output:'en'
 params:

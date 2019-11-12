@@ -1,5 +1,5 @@
 Test ID:unit_test_11
-Requirements being tested:mgdlToMMOL should correctly convert float input 30.01
+Requirements being tested:non-integer outputs of MMOL should be rounded to 1 decimal point
 Component being tested:units.js
 Expected output:1.7
 call:mgdlToMMOL
