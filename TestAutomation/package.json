@@ -1,7 +1,5 @@
 {
   "scripts": {
-    "test": "testCasesExecutables/*",
-    "start": "node testCasesExecutables/test.js",
     "oracle": "node oracles/oracle.js"
   },
   "dependencies": {
