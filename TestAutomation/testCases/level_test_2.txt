@@ -1,5 +1,5 @@
 Test ID:level_test_2
-Requirements being tested:toDisplay() should only accept integers between -3 and 2
+Requirements being tested:integer values must map to their correct alert level keywords
 Component being tested:levels.js
 Expected output:'Urgent'
 call:toDisplay

@@ -1,5 +1,5 @@
 Test ID:language_test_2
-Requirements being tested:change language
+Requirements being tested:the set language should be able to be changed
 Component being tested:language.js
 Expected output:'fr'
 parameter to prev function:

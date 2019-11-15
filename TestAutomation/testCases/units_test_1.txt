@@ -1,5 +1,5 @@
 Test ID:unit_test_1
-Requirements being tested:mmolToMgdl should throw TypeError when given invalid input
+Requirements being tested:non-numeric inputs should not be able to be converted to Mgdl
 Component being tested:units.js
 Expected Output:NaN
 Function call:mmolToMgdl

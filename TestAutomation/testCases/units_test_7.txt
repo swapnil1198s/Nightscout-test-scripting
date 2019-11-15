@@ -1,5 +1,5 @@
 Test ID:unit_test_7
-Requirements being tested:mgdlToMMOL should throw TypeError when given invalid input
+Requirements being tested:non-numeric inputs should not be able to be converted to MMOL
 Component being tested:units.js
 Expected output:NaN
 call:mgdlToMMOL

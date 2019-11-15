@@ -1,5 +1,5 @@
 Test ID:unit_test_8
-Requirements being tested:mgdlToMMOL should correctly convert string input 18
+Requirements being tested:tring inputs should be converted to numbers if possible, and convert correctly to MMOL
 Component being tested:units.js
 Expected output:1
 call:mgdlToMMOL
