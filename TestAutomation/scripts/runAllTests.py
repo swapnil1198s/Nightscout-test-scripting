@@ -81,6 +81,7 @@ with open(report, "w") as htmlfile:
         lines = proc.stdout.readlines()
         expectval = lines[-3].decode('utf-8').strip('\n').strip('\r').strip()
         returnval = lines[-2].decode('utf-8').strip('\n').strip('\r').strip()
+        if "npm ERR!" in returnval: returnval = "npm ERR!"
         resval = lines[-1].decode('utf-8').strip('\n').strip('\r')
         print('  expectval:\t\t', expectval)
         print('  returnval:\t\t', returnval)
@@ -100,11 +101,11 @@ with open(report, "w") as htmlfile:
         prevtest = ''.join(i for i in testcase if not i.isdigit())
 
         if resval == "Pass":
-            reportLine += 'Pass &#x2705</td>\n'
+            reportLine += '&#x2705 Pass </td>\n'
         elif resval == "Fail":
-            reportLine += 'Fail &#x26D4</td>\n'
+            reportLine += '&#x26D4 Fail </td>\n'
         else:
-            reportLine += 'Error</td>\n'
+            reportLine += '&#x26A1 Error</td>\n'
 
         lines = [testName, testReq, testFile, subFuncs, testOracle.strip('\'').strip('\"')]
         for line in lines:
