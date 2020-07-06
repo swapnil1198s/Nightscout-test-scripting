@@ -1,4 +1,4 @@
-# 2-2 Javascript Unit Testing Framework Project
+# 2-2 Javascript and python Unit Testing Framework Project
 
 Jack Fraser, Jesse Deacon, Swapnil Srivastava
 
